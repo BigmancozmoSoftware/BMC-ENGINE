@@ -27,7 +27,7 @@
     <ClInclude Include="engine\framework\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\framework\GameObject.h">
+    <ClInclude Include="engine\framework\GameObject\GameObjectBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClCompile Include="engine\framework\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\framework\GameObject.cpp">
+    <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
