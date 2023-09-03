@@ -18,7 +18,13 @@
     <ClInclude Include="scenes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExampleScene.h">
+    <ClInclude Include="engine\BMCEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\framework\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,7 +32,10 @@
     <Text Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ExampleScene.cpp">
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\framework\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
