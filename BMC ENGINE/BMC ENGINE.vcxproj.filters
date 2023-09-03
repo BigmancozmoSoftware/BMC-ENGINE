@@ -27,12 +27,18 @@
     <ClInclude Include="engine\framework\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\framework\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\framework\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

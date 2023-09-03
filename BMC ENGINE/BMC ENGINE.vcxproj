@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClInclude Include="engine\BMCEngine.h" />
     <ClInclude Include="engine\framework\Scene.h" />
+    <ClInclude Include="engine\framework\GameObject.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\framework\Scene.cpp" />
+    <ClCompile Include="engine\framework\GameObject.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
