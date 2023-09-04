@@ -138,6 +138,7 @@
     <ClInclude Include="engine\framework\Scene.h" />
     <ClInclude Include="engine\framework\GameObject\GameObjectBase.h" />
     <ClInclude Include="engine\core\Renderer.h" />
+    <ClInclude Include="GameSettings.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
