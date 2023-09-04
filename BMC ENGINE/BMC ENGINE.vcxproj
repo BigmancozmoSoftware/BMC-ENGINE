@@ -131,11 +131,14 @@
     <ClInclude Include="engine\framework\Scene.h" />
     <ClInclude Include="engine\framework\GameObject\GameObjectBase.h" />
     <ClInclude Include="scenes.h" />
+    <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
+    <ClInclude Include="engine\framework\GameObject\Shapes.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\framework\Scene.cpp" />
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
+    <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
