@@ -5,10 +5,9 @@ class Window
 {
 public:
 	Window(int width, int height, const char* title);
+	void update();
+	bool shouldClose();
 private:
-	void loadVidMode();
 	GLFWwindow* window;
-	GLFWmonitor* monitor;
-	const GLFWvidmode* vidMode;
 };
 
