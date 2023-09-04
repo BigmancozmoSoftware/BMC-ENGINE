@@ -5,5 +5,6 @@ class Utility
 {
 public:
 	void printf(const char* text);
+
 };
 
