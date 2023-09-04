@@ -130,16 +130,18 @@
     <ClInclude Include="engine\BMCEngine.h" />
     <ClInclude Include="engine\framework\Scene.h" />
     <ClInclude Include="engine\framework\GameObject\GameObjectBase.h" />
+    <ClInclude Include="engine\core\Renderer.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="engine\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\framework\Scene.cpp" />
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="engine\core\Window.cpp" />
+    <ClCompile Include="engine\core\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

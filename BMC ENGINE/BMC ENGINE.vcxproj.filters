@@ -21,7 +21,7 @@
     <ClInclude Include="engine\BMCEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="engine\core\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\framework\Scene.h">
@@ -36,9 +36,12 @@
     <ClInclude Include="engine\framework\GameObject\Shapes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\core\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="engine\core\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\Scene.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
