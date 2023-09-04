@@ -45,6 +45,12 @@
     <ClInclude Include="engine\utility\Utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\framework\input\KeyboardInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\file\FileManagement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\core\Window.cpp">
@@ -69,6 +75,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\utility\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\framework\input\KeyboardInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\file\FileManagement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
