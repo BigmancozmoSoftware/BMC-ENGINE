@@ -11,9 +11,19 @@ int main(){
 
 	files->ReadFile("GameSettings.h");
 
+	float color = 0;
+
 	renderer->init();
 	while (!window->shouldClose()) {
-		glClearColor(1, 0, 0, 1);
+		if (glfwGetKey(window->getWindow(), GLFW_KEY_UP) == GLFW_PRESS) {
+			color += 0.05;
+		}
+
+		if (glfwGetKey(window->getWindow(), GLFW_KEY_DOWN) == GLFW_PRESS) {
+			color -= 0.05;
+		}
+
+		glClearColor(color, 0.5, color, 1);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		window->update();
