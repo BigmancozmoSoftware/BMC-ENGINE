@@ -26,3 +26,8 @@ bool Window::shouldClose()
 {
 	return glfwWindowShouldClose(window);
 }
+
+GLFWwindow* Window::getWindow()
+{
+	return window;
+}
