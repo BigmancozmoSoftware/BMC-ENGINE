@@ -11,7 +11,6 @@ Window::Window(int width, int height, const char* title)
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
 
 	glfwSetWindowPos(window, (vidMode->width / 2) - (width / 2), (vidMode->height / 2) - (height / 2));
-
 	glfwShowWindow(window);
 
 	glfwMakeContextCurrent(window);
