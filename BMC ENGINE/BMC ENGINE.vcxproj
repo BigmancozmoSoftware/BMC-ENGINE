@@ -143,6 +143,7 @@
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
     <ClInclude Include="engine\core\Window.h" />
+    <ClInclude Include="engine\utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\framework\Scene.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="engine\core\Renderer.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="engine\utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
