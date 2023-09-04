@@ -11,5 +11,5 @@ Renderer::Renderer()
 void Renderer::init()
 {
 	gladLoadGL();
-	cout << "Started renderer!" << endl;
+	printf("Loaded OpenGL!");
 }
