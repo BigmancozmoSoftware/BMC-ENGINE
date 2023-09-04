@@ -2,11 +2,14 @@
 
 string FileManager::ReadFile(const char* path)
 {
-	string text;
+	std::cout << ((string)"Reading file " + (string)path) << endl;
+
+	string currentLine;
+	string text = "";
 	ifstream readFile(path);
 
-	while (getline(readFile, text)) {
-		cout << text;
+	while (getline(readFile, currentLine)) {
+		text = text + currentLine + "\n";
 	}
 
 	readFile.close();
