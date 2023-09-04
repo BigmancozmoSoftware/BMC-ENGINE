@@ -140,12 +140,10 @@
     <ClInclude Include="engine\framework\GameObject\GameObjectBase.h" />
     <ClInclude Include="engine\core\Renderer.h" />
     <ClInclude Include="GameSettings.h" />
-    <ClInclude Include="engine\framework\input\KeyboardInput.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
     <ClInclude Include="engine\core\Window.h" />
-    <ClInclude Include="engine\utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
@@ -154,10 +152,8 @@
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
     <ClCompile Include="engine\core\Window.cpp" />
     <ClCompile Include="engine\core\Renderer.cpp" />
-    <ClCompile Include="glad.c" />
-    <ClCompile Include="engine\framework\input\KeyboardInput.cpp" />
+    <ClCompile Include="engine\core\glad.c" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="engine\utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
