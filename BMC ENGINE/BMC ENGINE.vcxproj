@@ -148,6 +148,8 @@
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
     <ClCompile Include="engine\core\Window.cpp" />
     <ClCompile Include="engine\core\Renderer.cpp" />
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
