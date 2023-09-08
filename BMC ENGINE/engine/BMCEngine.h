@@ -7,3 +7,4 @@
 #include "core/Window.h"
 #include "core/Renderer.h"
 #include "core/file/FileManagement.h"
+#include "framework/Math.h"
