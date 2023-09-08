@@ -6,6 +6,7 @@ int main(){
 
 	Window* window = new Window(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, GAME_WINDOW_TITLE);
 	Renderer* renderer = new Renderer();
+	Math* math = new Math();
 	
 	FileManager* files = new FileManager();
 
@@ -16,14 +17,16 @@ int main(){
 	renderer->init();
 	while (!window->shouldClose()) {
 		if (glfwGetKey(window->getWindow(), GLFW_KEY_UP) == GLFW_PRESS) {
-			color += 0.05;
+			color += 0.025;
 		}
 
 		if (glfwGetKey(window->getWindow(), GLFW_KEY_DOWN) == GLFW_PRESS) {
-			color -= 0.05;
+			color -= 0.025;
 		}
 
-		glClearColor(color, 0.5, color, 1);
+		color = math->clamp(0, 1, color);
+
+		glClearColor(color, color, color, 1);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		window->update();
