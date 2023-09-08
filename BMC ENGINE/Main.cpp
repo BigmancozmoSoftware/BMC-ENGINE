@@ -17,16 +17,16 @@ int main(){
 	renderer->init();
 	while (!window->shouldClose()) {
 		if (glfwGetKey(window->getWindow(), GLFW_KEY_UP) == GLFW_PRESS) {
-			color += 0.025;
+			color += 5;
 		}
 
 		if (glfwGetKey(window->getWindow(), GLFW_KEY_DOWN) == GLFW_PRESS) {
-			color -= 0.025;
+			color -= 5;
 		}
 
-		color = math->clamp(0, 1, color);
+		color = math->clamp(0, 255, color);
 
-		glClearColor(color, color, color, 1);
+		renderer->setBackgroundColor(0, color, 255);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		window->update();
