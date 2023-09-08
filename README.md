@@ -1,4 +1,6 @@
-# BMC Engine
+<p align="center">
+  ![image](https://github.com/Bigmancozmo/BMC-ENGINE/assets/67850768/92ac3769-7ae4-4a48-bc32-5826dcbd4140)
+</p>
 BMC engine is a game engine made by Bigmancozmo. Continue reading to learn how to use it.
 
 ## Installation
