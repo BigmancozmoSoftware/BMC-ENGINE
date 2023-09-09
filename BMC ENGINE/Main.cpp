@@ -9,6 +9,7 @@ int main(){
 	Math* math = new Math();
 	FileManager* files = new FileManager();
 	KeyboardInput* keyboard = new KeyboardInput(window->getWindow());
+	MouseInput* mouse = new MouseInput(window->getWindow());
 
 	files->ReadFile("GameSettings.h");
 
