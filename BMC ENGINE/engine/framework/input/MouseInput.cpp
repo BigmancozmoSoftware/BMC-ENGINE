@@ -7,16 +7,14 @@ MouseInput::MouseInput(GLFWwindow* window)
 
 int MouseInput::getMouseX()
 {
-	double x;
-	double y;
+	double x, y;
 	glfwGetCursorPos(window, &x, &y);
 	return x;
 }
 
 int MouseInput::getMouseY()
 {
-	double x;
-	double y;
+	double x, y;
 	glfwGetCursorPos(window, &x, &y);
 	return y;
 }
