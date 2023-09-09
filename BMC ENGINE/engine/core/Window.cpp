@@ -14,7 +14,7 @@ Window::Window(int width, int height, const char* title)
 		width = vidMode->width * 0.9;
 	}
 	if (height == 0) {
-		height = vidMode->height * 0.9;
+		height = vidMode->height * 0.8;
 	}
 	
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
