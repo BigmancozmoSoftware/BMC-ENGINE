@@ -7,8 +7,8 @@ int main(){
 	Window* window = new Window(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, GAME_WINDOW_TITLE);
 	Renderer* renderer = new Renderer();
 	Math* math = new Math();
-	
 	FileManager* files = new FileManager();
+	KeyboardInput* keyboard = new KeyboardInput(window->getWindow());
 
 	files->ReadFile("GameSettings.h");
 
@@ -16,11 +16,11 @@ int main(){
 
 	renderer->init();
 	while (!window->shouldClose()) {
-		if (glfwGetKey(window->getWindow(), GLFW_KEY_UP) == GLFW_PRESS) {
+		if (keyboard->isKeyDown(GLFW_KEY_UP)) {
 			color += 5;
 		}
 
-		if (glfwGetKey(window->getWindow(), GLFW_KEY_DOWN) == GLFW_PRESS) {
+		if (keyboard->isKeyDown(GLFW_KEY_DOWN)) {
 			color -= 5;
 		}
 

@@ -141,6 +141,7 @@
     <ClInclude Include="engine\core\Renderer.h" />
     <ClInclude Include="GameSettings.h" />
     <ClInclude Include="engine\framework\Math.h" />
+    <ClInclude Include="engine\framework\input\KeyboardInput.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
@@ -154,6 +155,7 @@
     <ClCompile Include="engine\core\Window.cpp" />
     <ClCompile Include="engine\core\Renderer.cpp" />
     <ClCompile Include="engine\core\glad.c" />
+    <ClCompile Include="engine\framework\input\KeyboardInput.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="engine\framework\Math.cpp" />
   </ItemGroup>
