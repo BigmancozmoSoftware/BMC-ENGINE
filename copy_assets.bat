@@ -1,4 +1,18 @@
-echo Copying to Debug
-cd BMC ENGINE
+echo Clearing existing resources
+
+cd x64/Debug
+rmdir resources /s /q
+mkdir resources
+cd ../Release
+rmdir resources /s /q
+mkdir resources
+cd ../..
+
+cd "BMC ENGINE"
 cd engine
-copy assets ../../x64/Debug
+
+echo Copying to Debug
+copy "assets" "../../x64/Debug/resources"
+
+echo Copying to Release
+copy "assets" "../../x64/Release/resources"
