@@ -18,13 +18,3 @@ int MouseInput::getMouseY()
 	glfwGetCursorPos(window, &x, &y);
 	return y;
 }
-
-int MouseInput::getMouseX(bool relative)
-{
-	return 0;
-}
-
-int MouseInput::getMouseY(bool relative)
-{
-	return 0;
-}
