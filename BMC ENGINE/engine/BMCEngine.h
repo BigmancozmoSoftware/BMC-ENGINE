@@ -10,3 +10,4 @@
 #include "core/file/FileManagement.h"
 #include "framework/Math.h"
 #include "framework/input/KeyboardInput.h"
+#include "framework/input/MouseInput.h"
