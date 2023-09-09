@@ -13,21 +13,31 @@ int main(){
 
 	files->ReadFile("GameSettings.h");
 
-	float color = 0;
-
+	float red = 0;
+	float green = 0;
+	
 	renderer->init();
 	while (!window->shouldClose()) {
 		if (keyboard->isKeyDown(GLFW_KEY_UP)) {
-			color += 5;
+			red += 5;
 		}
 
 		if (keyboard->isKeyDown(GLFW_KEY_DOWN)) {
-			color -= 5;
+			red -= 5;
 		}
 
-		color = math->clamp(0, 255, color);
+		if (mouse->leftMouseDown()) {
+			green -= 5;
+		}
 
-		renderer->setBackgroundColor(0, color, 255);
+		if (mouse->rightMouseDown()) {
+			green += 5;
+		}
+
+		red = math->clamp(red, 255, 0);
+		green = math->clamp(green, 255, 0);
+
+		renderer->setBackgroundColor(red, green , 255);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		window->update();
