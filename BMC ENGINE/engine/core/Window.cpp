@@ -10,6 +10,13 @@ Window::Window(int width, int height, const char* title)
 	glfwDefaultWindowHints();
 	glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 
+	if (width == 0) {
+		width = vidMode->width * 0.9;
+	}
+	if (height == 0) {
+		height = vidMode->height * 0.9;
+	}
+	
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
 	
 	int img_width, img_height;
