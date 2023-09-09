@@ -18,3 +18,13 @@ int MouseInput::getMouseY()
 	glfwGetCursorPos(window, &x, &y);
 	return y;
 }
+
+bool MouseInput::leftMouseDown()
+{
+	return glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
+}
+
+bool MouseInput::rightMouseDown()
+{
+	return glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);
+}
