@@ -1,3 +1,5 @@
+// Hi, from Bigmancozmo!
+
 #include "engine/BMCEngine.h"
 #include "GameSettings.h"
 
