@@ -11,3 +11,4 @@
 #include "framework/Math.h"
 #include "framework/input/KeyboardInput.h"
 #include "framework/input/MouseInput.h"
+#include "framework/Color.h"
