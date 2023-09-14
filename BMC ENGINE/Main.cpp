@@ -37,7 +37,7 @@ int main(){
 		red = math->clamp(red, 255, 0);
 		green = math->clamp(green, 255, 0);
 
-		renderer->setBackgroundColor(red, green , 255);
+		renderer->setBackgroundColor(red, green, 255);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		window->update();
