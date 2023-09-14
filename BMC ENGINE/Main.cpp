@@ -1,3 +1,4 @@
+// nice
 #include "engine/BMCEngine.h"
 #include "GameSettings.h"
 
