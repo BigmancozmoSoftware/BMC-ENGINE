@@ -11,7 +11,7 @@ int main(){
 	KeyboardInput* keyboard = new KeyboardInput(window->getWindow());
 	MouseInput* mouse = new MouseInput(window->getWindow());
 
-	files->ReadFile("GameSettings.h");
+	cout << files->ReadFile("GameSettings.h") << endl;
 
 	float red = 0;
 	float green = 0;
