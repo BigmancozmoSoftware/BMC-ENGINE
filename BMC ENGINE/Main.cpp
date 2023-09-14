@@ -1,6 +1,3 @@
-// Hi, from Bigmancozmo!!!!!!!!!
-// Hi, from Talcility!
-
 #include "engine/BMCEngine.h"
 #include "GameSettings.h"
 
