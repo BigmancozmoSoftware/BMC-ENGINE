@@ -1,7 +1,8 @@
-// nice
+// hi welcome to bmc engine source code
+
 #include "engine/BMCEngine.h"
 #include "GameSettings.h"
-// big juicy men
+
 int main(){
 	glfwInit();
 
