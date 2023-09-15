@@ -51,6 +51,11 @@ bool Window::shouldClose()
 	return glfwWindowShouldClose(window);
 }
 
+void Window::close()
+{
+	glfwSetWindowShouldClose(window, GLFW_TRUE);
+}
+
 GLFWwindow* Window::getWindow()
 {
 	return window;
