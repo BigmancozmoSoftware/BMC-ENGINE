@@ -167,7 +167,8 @@
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="engine\assets\bmcenginelogo.png" />
+    <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png" />
+    <Image Include="engine\assets\images\logo\bmcenginelogo_x64.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
