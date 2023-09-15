@@ -21,7 +21,7 @@ Window::Window(int width, int height, const char* title)
 	
 	int img_width, img_height;
 	int channels;
-	unsigned char* pixels = stbi_load("./resources/images/logo/bmcenginelogo_32x.png", &img_width, &img_height, &channels, 4);
+	unsigned char* pixels = stbi_load("./resources/images/logo/bmcenginelogo_64x.png", &img_width, &img_height, &channels, 4);
 
 	if (stbi_failure_reason()) {
 		std::cout << "Image failed to load: " << stbi_failure_reason() << endl;
