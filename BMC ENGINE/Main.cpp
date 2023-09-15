@@ -3,6 +3,12 @@
 #include "engine/BMCEngine.h"
 #include "GameSettings.h"
 
+#include <chrono>
+#include <sys/timeb.h>
+#include <ctime>
+
+using namespace std::chrono;
+
 int main(){
 	glfwInit();
 
@@ -13,36 +19,33 @@ int main(){
 	KeyboardInput* keyboard = new KeyboardInput(window->getWindow());
 	MouseInput* mouse = new MouseInput(window->getWindow());
 
-	cout << files->ReadFile("GameSettings.h") << endl;
+	Color* bgColor = new Color(58, 96, 158);
 
-	float red = 0;
-	float green = 0;
-	
+	high_resolution_clock::time_point previous = high_resolution_clock::now();
+	high_resolution_clock::time_point current = high_resolution_clock::now();
+
+	double deltaTime = 0;
+
 	renderer->init();
 	while (!window->shouldClose()) {
+		current = high_resolution_clock::now();
+		duration<double, std::milli> time_span = current - previous;
+		deltaTime = time_span.count();
+
 		if (keyboard->isKeyDown(GLFW_KEY_UP)) {
-			red += 5;
+			bgColor->r += (int)(3600 * deltaTime);
 		}
 
 		if (keyboard->isKeyDown(GLFW_KEY_DOWN)) {
-			red -= 5;
+			bgColor->r -= (int)(3600 * deltaTime);
 		}
 
-		if (mouse->leftMouseDown()) {
-			green -= 5;
-		}
-
-		if (mouse->rightMouseDown()) {
-			green += 5;
-		}
-
-		red = math->clamp(red, 255, 0);
-		green = math->clamp(green, 255, 0);
-
-		renderer->setBackgroundColor(red, green, 255);
+		renderer->setBackgroundColor(bgColor);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		window->update();
+
+		previous = high_resolution_clock::now();
 	}
 
 	glfwTerminate();

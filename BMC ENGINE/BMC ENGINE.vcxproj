@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="engine\framework\Color.h" />
     <ClInclude Include="engine\BMCEngine.h" />
     <ClInclude Include="engine\core\file\FileManagement.h" />
     <ClInclude Include="engine\framework\Scene.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="engine\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\framework\Color.cpp" />
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
     <ClCompile Include="engine\framework\Scene.cpp" />
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
