@@ -12,7 +12,8 @@ cd "BMC ENGINE"
 cd engine
 
 echo Copying to Debug
-copy "assets" "../../x64/Debug/resources"
+robocopy "assets" "../../x64/Debug/resources" /s /e
 
 echo Copying to Release
-copy "assets" "../../x64/Release/resources"
+robocopy "assets" "../../x64/Release/resources" /s /e
+pause
