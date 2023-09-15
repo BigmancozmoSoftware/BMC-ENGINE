@@ -40,6 +40,10 @@ int main(){
 			bgColor->r -= (int)(4500 * deltaTime);
 		}
 
+		if (keyboard->isKeyDown(GLFW_KEY_ESCAPE)) {
+			window->close();
+		}
+
 		bgColor->r = math->clamp(0, 255, bgColor->r);
 
 		renderer->setBackgroundColor(bgColor);
