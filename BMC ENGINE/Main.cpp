@@ -33,11 +33,11 @@ int main(){
 		deltaTime = time_span.count();
 
 		if (keyboard->isKeyDown(GLFW_KEY_UP)) {
-			bgColor->r += (int)(3600 * deltaTime);
+			bgColor->r += (int)(4500 * deltaTime);
 		}
 
 		if (keyboard->isKeyDown(GLFW_KEY_DOWN)) {
-			bgColor->r -= (int)(3600 * deltaTime);
+			bgColor->r -= (int)(4500 * deltaTime);
 		}
 
 		renderer->setBackgroundColor(bgColor);
