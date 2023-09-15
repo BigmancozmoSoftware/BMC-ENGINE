@@ -40,6 +40,8 @@ int main(){
 			bgColor->r -= (int)(4500 * deltaTime);
 		}
 
+		bgColor->r = math->clamp(0, 255, bgColor->r);
+
 		renderer->setBackgroundColor(bgColor);
 		glClear(GL_COLOR_BUFFER_BIT);
 
