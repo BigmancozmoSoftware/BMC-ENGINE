@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\DeltaTime.h" />
     <ClInclude Include="engine\framework\Color.h" />
     <ClInclude Include="engine\BMCEngine.h" />
     <ClInclude Include="engine\core\file\FileManagement.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="engine\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\DeltaTime.cpp" />
     <ClCompile Include="engine\framework\Color.cpp" />
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
     <ClCompile Include="engine\framework\Scene.cpp" />
