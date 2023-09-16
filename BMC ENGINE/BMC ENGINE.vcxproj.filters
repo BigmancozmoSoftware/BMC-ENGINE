@@ -57,6 +57,9 @@
     <ClInclude Include="engine\framework\Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\core\DeltaTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\core\Window.cpp">
@@ -95,12 +98,18 @@
     <ClCompile Include="engine\framework\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\DeltaTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="engine\assets\bmcenginelogo.png">
+    <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
