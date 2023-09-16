@@ -95,12 +95,19 @@
     <ClCompile Include="engine\framework\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\shaders\vertexShaderDefault.vert">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="engine\core\shaders\fragmentShaderDefault.frag" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="engine\assets\bmcenginelogo.png">
+    <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="engine\assets\images\logo\bmcenginelogo_x64.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
