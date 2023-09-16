@@ -25,12 +25,11 @@ robocopy "assets" "../../x64/Debug/resources" /s /e
 
 echo Copying to Release
 robocopy "assets" "../../x64/Release/resources" /s /e
-pause
 
 echo:
 echo Step 2: Delete unnecessary files
 echo:
-cd ../../x64/Release/
+cd ../../x64/Debug/
 del "BMC ENGINE.pdb"
 
 echo:
@@ -41,5 +40,4 @@ del BMCEngine.zip
 7z a -tzip BMCEngine.zip "BMC ENGINE.exe"
 7z a -tzip BMCEngine.zip resources
 
-pause
 cd ../..
