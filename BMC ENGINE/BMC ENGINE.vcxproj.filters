@@ -60,6 +60,9 @@
     <ClInclude Include="engine\core\DeltaTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\core\audio\Audio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\core\Window.cpp">
@@ -101,6 +104,9 @@
     <ClCompile Include="engine\core\DeltaTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\core\audio\Audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
@@ -112,5 +118,8 @@
     <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="engine\assets\sound\bass.mp3" />
   </ItemGroup>
 </Project>

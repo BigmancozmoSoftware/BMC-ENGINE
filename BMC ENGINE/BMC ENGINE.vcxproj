@@ -110,7 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,11 +129,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/ENTRY:mainCRTStartup %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="engine\core\audio\Audio.h" />
     <ClInclude Include="engine\core\DeltaTime.h" />
     <ClInclude Include="engine\framework\Color.h" />
     <ClInclude Include="engine\BMCEngine.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="engine\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\audio\Audio.cpp" />
     <ClCompile Include="engine\core\DeltaTime.cpp" />
     <ClCompile Include="engine\framework\Color.cpp" />
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
@@ -171,6 +173,9 @@
   <ItemGroup>
     <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png" />
     <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="engine\assets\sound\bass.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
