@@ -2,9 +2,13 @@
 
 #include "engine/BMCEngine.h"
 #include "GameSettings.h"
+#include "FMOD/fmod.h"
 
 int main(){
 	glfwInit();
+	
+	Audio* audio = new Audio();
+	audio->playSound("./resources/sound/bass.mp3");
 
 	Window* window = new Window(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, GAME_WINDOW_TITLE);
 	Renderer* renderer = new Renderer();
