@@ -150,7 +150,7 @@
     <ClInclude Include="engine\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine\core\shaders\vertexShaderDefault.vert" />
+    <ClCompile Include="engine\core\shaders\default\vertexShaderDefault.vert" />
     <ClCompile Include="engine\framework\Color.cpp" />
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
     <ClCompile Include="engine\framework\Scene.cpp" />
@@ -166,7 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
-    <None Include="engine\core\shaders\fragmentShaderDefault.frag" />
+    <None Include="engine\core\shaders\default\fragmentShaderDefault.frag" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png" />
