@@ -24,6 +24,8 @@ int main(){
 	MouseInput* mouse = new MouseInput(window->getWindow());
 
 	Color* bgColor = new Color(58, 96, 158);
+	audio->playSound("./resources/sound/TBOT OST - Chill Cave Song.wav", true);
+
 
 	renderer->init();
 

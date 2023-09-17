@@ -7,10 +7,21 @@ Audio::Audio()
 
 void Audio::playSound(const char* filePath)
 {
-	FMOD_RESULT result;
 	FMOD_SOUND* sound;
+	FMOD_System_CreateSound(system, filePath, FMOD_DEFAULT, NULL, &sound);	
+	FMOD_System_PlaySound(system, sound, NULL, false, NULL);
+	
+}
 
-	result = FMOD_System_CreateSound(system, filePath, FMOD_DEFAULT, NULL, &sound);
+void Audio::playSound(const char* filePath, bool looped)
+{
+	auto mode = FMOD_DEFAULT;
+	if (looped) {
+		mode = FMOD_LOOP_NORMAL;
+	}
+
+	FMOD_SOUND* sound;
+	FMOD_System_CreateSound(system, filePath, mode, NULL, &sound);
 	FMOD_System_PlaySound(system, sound, NULL, false, NULL);
 }
 
