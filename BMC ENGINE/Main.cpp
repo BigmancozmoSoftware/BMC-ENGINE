@@ -4,12 +4,9 @@
 #include "GameSettings.h"
 #include "FMOD/fmod.h"
 #include <Windows.h>
-#include <iostream>
-#include <filesystem>
-#include "ResourceDirectory.h"
+#include "PrivateData.h"
 
 int main(){
-
 	glfwInit();
 
 	if (IsDebuggerPresent()) {
