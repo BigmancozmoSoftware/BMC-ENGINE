@@ -6,6 +6,7 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include "core/rendering/Window.h"
+#include "core/rendering/Window.h"
 #include "core/rendering/Renderer.h"
 #include "core/file/FileManagement.h"
 #include "framework/Math.h"
@@ -13,4 +14,3 @@
 #include "framework/input/MouseInput.h"
 #include "framework/Color.h"
 #include "core/audio/Audio.h"
-#include "framework/Game.h"
