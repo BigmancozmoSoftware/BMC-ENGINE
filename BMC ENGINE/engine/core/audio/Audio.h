@@ -13,7 +13,8 @@ public:
 	void setVolume(int volume);
 private:
 	void initFmod();
-	bool handleError();
+	bool didErrorOccur();
 	FMOD_SYSTEM* system;
+ FMOD_RESULT result;
 	FMOD_SOUNDGROUP* sGroup;
 };
