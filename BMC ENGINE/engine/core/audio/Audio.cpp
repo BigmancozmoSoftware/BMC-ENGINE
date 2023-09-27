@@ -8,9 +8,12 @@ Audio::Audio()
 void Audio::playSound(const char* filePath)
 {
 	FMOD_SOUND* sound;
-	FMOD_System_CreateSound(system, filePath, FMOD_DEFAULT, NULL, &sound);	
-	FMOD_Sound_SetSoundGroup(sound, sGroup);
-	FMOD_System_PlaySound(system, sound, NULL, false, NULL);
+	result = FMOD_System_CreateSound(system, filePath, FMOD_DEFAULT, NULL, &sound);
+	if (didErrorOccur()) { return; }
+	result = FMOD_Sound_SetSoundGroup(sound, sGroup);
+	if (didErrorOccur()) { return; }
+	result = FMOD_System_PlaySound(system, sound, NULL, false, NULL);
+	if (didErrorOccur()) { return; }
 }
 
 void Audio::playSound(const char* filePath, bool looped)
@@ -22,14 +25,18 @@ void Audio::playSound(const char* filePath, bool looped)
 
 	FMOD_SOUND* sound;
 
-	FMOD_System_CreateSound(system, filePath, mode, NULL, &sound);
-	FMOD_Sound_SetSoundGroup(sound, sGroup);
-	FMOD_System_PlaySound(system, sound, NULL, false, NULL);
+	result = FMOD_System_CreateSound(system, filePath, mode, NULL, &sound);
+	if (didErrorOccur()) { return; }
+	result = FMOD_Sound_SetSoundGroup(sound, sGroup);
+	if (didErrorOccur()) { return; }
+	result = FMOD_System_PlaySound(system, sound, NULL, false, NULL);
+	if (didErrorOccur()) { return; }
 }
 
 void Audio::setVolume(int volume)
 {
-	FMOD_SoundGroup_SetVolume(sGroup, ((float)volume)/100);
+	result = FMOD_SoundGroup_SetVolume(sGroup, ((float)volume)/100);
+	if (didErrorOccur()) { return; }
 }
 
 void Audio::initFmod()
@@ -37,17 +44,19 @@ void Audio::initFmod()
 	system = NULL;
 
 	//FMOD_SoundGroup_SetVolume();
-	FMOD_System_Create(&system, FMOD_VERSION);
-	FMOD_System_Init(system, 512, FMOD_INIT_NORMAL, 0);
+	result = FMOD_System_Create(&system, FMOD_VERSION);
+	if (didErrorOccur()) { return; }
+	result = FMOD_System_Init(system, 512, FMOD_INIT_NORMAL, 0);
+	if (didErrorOccur()) { return; }
 
-	FMOD_System_CreateSoundGroup(system, "KewlSoundGroup", &sGroup);
+	result = FMOD_System_CreateSoundGroup(system, "KewlSoundGroup", &sGroup);
+	if (didErrorOccur()) { return; }
 }
 
 bool Audio::didErrorOccur(){
-    // this was coded on mobile. it was rather difficult.
     if(result != FMOD_OK){
         cout << "An FMOD error occurred!" << endl;
-    return true
+		return true;
     }
     return false;
 }
