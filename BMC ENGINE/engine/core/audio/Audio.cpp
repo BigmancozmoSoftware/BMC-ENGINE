@@ -43,9 +43,11 @@ void Audio::initFmod()
 	FMOD_System_CreateSoundGroup(system, "KewlSoundGroup", &sGroup);
 }
 
-bool Audio::handleError(){
+bool Audio::didErrorOccur(){
+    // this was coded on mobile. it was rather difficult.
     if(result != FMOD_OK){
-        // TODO: PRINT "An FMOD error occurred."
+        cout << "An FMOD error occurred!" << endl;
+    return true
     }
     return false;
 }
