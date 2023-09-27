@@ -25,7 +25,7 @@ int main(){
 
 	Color* bgColor = new Color(58, 96, 158);
 	audio->playSound("./resources/sound/TBOT OST - Chill Cave Song.wav", true);
-
+	audio->setVolume(10);
 
 	renderer->init();
 
