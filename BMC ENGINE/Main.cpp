@@ -14,6 +14,7 @@ int main(){
 	}
 
 	Audio* audio = new Audio();
+	audio->setVolume(10);
 	audio->playSound("./resources/sound/bass.mp3");
 
 	Window* window = new Window(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, GAME_WINDOW_TITLE);
@@ -24,8 +25,6 @@ int main(){
 	MouseInput* mouse = new MouseInput(window->getWindow());
 
 	Color* bgColor = new Color(58, 96, 158);
-	audio->playSound("./resources/sound/TBOT OST - Chill Cave Song.wav", true);
-	audio->setVolume(10);
 
 	renderer->init();
 
