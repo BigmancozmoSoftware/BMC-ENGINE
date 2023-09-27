@@ -141,7 +141,8 @@
     <ClInclude Include="engine\core\file\FileManagement.h" />
     <ClInclude Include="engine\framework\Scene.h" />
     <ClInclude Include="engine\framework\GameObject\GameObjectBase.h" />
-    <ClInclude Include="engine\core\Renderer.h" />
+    <ClInclude Include="engine\core\rendering\Renderer.h" />
+    <ClInclude Include="engine\framework\Game.h" />
     <ClInclude Include="GameSettings.h" />
     <ClInclude Include="engine\framework\Math.h" />
     <ClInclude Include="engine\framework\input\KeyboardInput.h" />
@@ -150,7 +151,7 @@
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
-    <ClInclude Include="engine\core\Window.h" />
+    <ClInclude Include="engine\core\rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\core\audio\Audio.cpp" />
@@ -160,10 +161,11 @@
     <ClCompile Include="engine\framework\Scene.cpp" />
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
-    <ClCompile Include="engine\core\Window.cpp" />
-    <ClCompile Include="engine\core\Renderer.cpp" />
-    <ClCompile Include="engine\core\glad.c" />
+    <ClCompile Include="engine\core\rendering\Window.cpp" />
+    <ClCompile Include="engine\core\rendering\Renderer.cpp" />
+    <ClCompile Include="engine\core\rendering\glad.c" />
     <ClCompile Include="engine\framework\input\KeyboardInput.cpp" />
+    <ClCompile Include="engine\framework\Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="engine\framework\Math.cpp" />
     <ClCompile Include="engine\framework\input\MouseInput.cpp" />
