@@ -63,58 +63,7 @@
     <ClInclude Include="engine\core\audio\Audio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceDirectory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\achievement_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\activity_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\application_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\discord.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\event.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\ffi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\image_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\lobby_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\network_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\overlay_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\relationship_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\storage_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\store_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\user_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="discord\sdk\voice_manager.h">
+    <ClInclude Include="PrivateData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -159,48 +108,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\core\audio\Audio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\achievement_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\activity_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\application_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\core.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\image_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\lobby_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\network_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\overlay_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\relationship_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\storage_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\store_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\types.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\user_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="discord\sdk\voice_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

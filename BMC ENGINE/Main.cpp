@@ -4,12 +4,9 @@
 #include "GameSettings.h"
 #include "FMOD/fmod.h"
 #include <Windows.h>
-#include <iostream>
-#include <filesystem>
-#include "ResourceDirectory.h"
+#include "PrivateData.h"
 
 int main(){
-
 	glfwInit();
 
 	if (IsDebuggerPresent()) {
@@ -17,6 +14,7 @@ int main(){
 	}
 
 	Audio* audio = new Audio();
+	audio->setVolume(10);
 	audio->playSound("./resources/sound/bass.mp3");
 
 	Window* window = new Window(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, GAME_WINDOW_TITLE);
