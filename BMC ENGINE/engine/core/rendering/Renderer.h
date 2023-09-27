@@ -1,6 +1,6 @@
 #pragma once
-#include "../framework/Color.h"
-#include "../framework/Math.h"
+#include "../../framework/Color.h"
+#include "../../framework/Math.h"
 #include <iostream>
 #include "glad/glad.h"
 
