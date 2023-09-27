@@ -12,7 +12,8 @@ public:
 	void playSound(const char* filePath, bool looped);
 	void setVolume(int volume);
 private:
-	void initFmod();
+	void init();
+	bool handleErhandleE
 	FMOD_SYSTEM* system;
 	FMOD_SOUNDGROUP* sGroup;
 };
