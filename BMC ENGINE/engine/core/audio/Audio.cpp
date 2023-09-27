@@ -42,3 +42,10 @@ void Audio::initFmod()
 
 	FMOD_System_CreateSoundGroup(system, "KewlSoundGroup", &sGroup);
 }
+
+bool Audio::handleError(){
+    if(result != FMOD_OK){
+        // TODO: PRINT "An FMOD error occurred."
+    }
+    return false;
+}
