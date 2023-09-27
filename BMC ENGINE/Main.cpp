@@ -1,7 +1,6 @@
 // hi welcome to bmc engine
 
-#include "engine/BMCEngine.h"
-#include "GameSettings.h"
+#include "engine/framework/Game.h"
 #include "FMOD/fmod.h"
 #include <Windows.h>
 #include "PrivateData.h"

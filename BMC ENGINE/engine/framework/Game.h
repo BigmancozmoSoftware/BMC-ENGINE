@@ -1,12 +1,11 @@
 #pragma once
-#include "../BMCEngine.h"
 #include "../../GameSettings.h"
+#include "../BMCEngine.h"
 
 class Game
 {
 public:
 	Game();
-
 	Audio* audio;
 	Window* window;
 	Renderer* renderer;
