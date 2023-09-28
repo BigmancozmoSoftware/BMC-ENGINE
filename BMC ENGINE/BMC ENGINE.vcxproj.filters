@@ -51,7 +51,7 @@
     <ClInclude Include="engine\framework\Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\DeltaTime.h">
+    <ClInclude Include="engine\framework\DeltaTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\audio\Audio.h">
@@ -98,7 +98,7 @@
     <ClCompile Include="engine\framework\scripts\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\DeltaTime.cpp">
+    <ClCompile Include="engine\framework\scripts\DeltaTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\core\audio\Audio.cpp">

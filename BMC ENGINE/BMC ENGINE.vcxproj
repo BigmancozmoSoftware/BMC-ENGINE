@@ -135,7 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="engine\core\audio\Audio.h" />
-    <ClInclude Include="engine\core\DeltaTime.h" />
+    <ClInclude Include="engine\framework\DeltaTime.h" />
     <ClInclude Include="engine\framework\Color.h" />
     <ClInclude Include="engine\BMCEngine.h" />
     <ClInclude Include="engine\core\file\FileManagement.h" />
@@ -155,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\core\audio\Audio.cpp" />
-    <ClCompile Include="engine\core\DeltaTime.cpp" />
+    <ClCompile Include="engine\framework\scripts\DeltaTime.cpp" />
     <ClCompile Include="engine\framework\scripts\Color.cpp" />
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
     <ClCompile Include="engine\framework\scripts\Scene.cpp" />
