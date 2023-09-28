@@ -367,4 +367,4 @@ generate_gource.bat
 gource.mp4
 
 # Personal info file
-BMC ENGINE/ResourceDirectory.h
+BMC ENGINE/PrivateData.h
