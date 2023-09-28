@@ -11,7 +11,8 @@ That's it, you've installed the engine!
 ## Compiling
 To compile, there's a few steps you must do first.
 1. Compile the engine as Debug. It's OK if it makes errors, we just need the build's directory.
-1. Add a file called `PrivateData.h` in the same directory as `Main.cpp`. The contents of this are as follows:
+2. Run `copy_assets.bat`.
+3. Add a file called `PrivateData.h` in the same directory as `Main.cpp`. The contents of this are as follows:
     ```
     #pragma once
     #define RESOURCE_DIRECTORY L"ResourceDir"
