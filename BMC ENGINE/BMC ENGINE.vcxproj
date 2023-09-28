@@ -156,18 +156,18 @@
   <ItemGroup>
     <ClCompile Include="engine\core\audio\Audio.cpp" />
     <ClCompile Include="engine\core\DeltaTime.cpp" />
-    <ClCompile Include="engine\framework\Color.cpp" />
+    <ClCompile Include="engine\framework\scripts\Color.cpp" />
     <ClCompile Include="engine\core\file\FileManagement.cpp" />
-    <ClCompile Include="engine\framework\Scene.cpp" />
+    <ClCompile Include="engine\framework\scripts\Scene.cpp" />
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
     <ClCompile Include="engine\core\rendering\Window.cpp" />
     <ClCompile Include="engine\core\rendering\Renderer.cpp" />
     <ClCompile Include="engine\core\rendering\glad.c" />
     <ClCompile Include="engine\framework\input\KeyboardInput.cpp" />
-    <ClCompile Include="engine\framework\Game.cpp" />
+    <ClCompile Include="engine\framework\scripts\Game.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="engine\framework\Math.cpp" />
+    <ClCompile Include="engine\framework\scripts\Math.cpp" />
     <ClCompile Include="engine\framework\input\MouseInput.cpp" />
   </ItemGroup>
   <ItemGroup>
