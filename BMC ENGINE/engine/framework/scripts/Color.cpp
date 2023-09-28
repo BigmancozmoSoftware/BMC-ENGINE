@@ -1,4 +1,4 @@
-#include "Color.h"
+#include "../Color.h"
 
 Color::Color(int r, int g, int b)
 {

@@ -21,9 +21,6 @@
     <ClInclude Include="engine\BMCEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\framework\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -34,9 +31,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\framework\GameObject\Shapes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\core\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameSettings.h">
@@ -57,7 +51,7 @@
     <ClInclude Include="engine\framework\Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\DeltaTime.h">
+    <ClInclude Include="engine\framework\DeltaTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\audio\Audio.h">
@@ -66,12 +60,18 @@
     <ClInclude Include="PrivateData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\core\rendering\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\framework\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\rendering\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine\core\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\framework\Scene.cpp">
+    <ClCompile Include="engine\framework\scripts\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp">
@@ -80,19 +80,13 @@
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\core\glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\core\file\FileManagement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\framework\Math.cpp">
+    <ClCompile Include="engine\framework\scripts\Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\input\KeyboardInput.cpp">
@@ -101,13 +95,25 @@
     <ClCompile Include="engine\framework\input\MouseInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\framework\Color.cpp">
+    <ClCompile Include="engine\framework\scripts\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\DeltaTime.cpp">
+    <ClCompile Include="engine\framework\scripts\DeltaTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\core\audio\Audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\rendering\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\rendering\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\rendering\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\framework\scripts\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
