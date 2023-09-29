@@ -172,7 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
-    <None Include="website\docs\index.html" />
+    <None Include="docs\website\docs\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png" />
