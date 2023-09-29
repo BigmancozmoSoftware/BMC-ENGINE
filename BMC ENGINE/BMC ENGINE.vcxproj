@@ -169,6 +169,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="engine\framework\scripts\Math.cpp" />
     <ClCompile Include="engine\framework\input\MouseInput.cpp" />
+    <ClCompile Include="website\docs\kewl.md" />
+    <ClCompile Include="website\docs\mdparser.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
