@@ -53,6 +53,7 @@ async function asyncFetch(page) {
 
 async function readPage(page) {
     let liners = await lines(await asyncFetch(page))
+    console.log(liners)
     for (let i = 0; i < liners.length; i++) {
         process(liners[i]);
     }
