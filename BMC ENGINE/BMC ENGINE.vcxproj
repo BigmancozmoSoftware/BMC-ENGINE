@@ -169,10 +169,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="engine\framework\scripts\Math.cpp" />
     <ClCompile Include="engine\framework\input\MouseInput.cpp" />
+    <ClCompile Include="website\docs\kewl.md" />
+    <ClCompile Include="website\docs\mdparser.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
-    <None Include="docs\website\docs\index.html" />
+    <None Include="website\docs\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png" />
