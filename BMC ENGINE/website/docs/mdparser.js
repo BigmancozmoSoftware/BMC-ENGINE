@@ -59,4 +59,4 @@ async function readPage(page) {
     }
 }
 
-readPage("https://raw.githubusercontent.com/Bigmancozmo/BMC-ENGINE/master/BMC%20ENGINE/website/docs/kewl.md");
+readPage("https://raw.githubusercontent.com/Bigmancozmo/BMC-ENGINE/beta/BMC%20ENGINE/website/docs/kewl.md");
