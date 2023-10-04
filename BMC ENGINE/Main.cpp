@@ -22,12 +22,24 @@ int main(){
 
 	game->renderer->init();
 
+	float vertices[] = {
+		-0.5f, -0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.0f, 0.5f, 0.0f
+	};
+	
+	game->renderer->setupBasic(vertices);
+
 	while (!game->window->shouldClose()) {
 		game->renderer->setBackgroundColor(bgColor);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		game->renderer->drawBasic();
+
 		game->window->update();
 	}
+	
+	game->renderer->cleanup();
 
 	glfwTerminate();
 
