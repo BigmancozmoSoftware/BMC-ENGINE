@@ -19,6 +19,4 @@ To compile, there's a few steps you must do first.
     ```
     Change "ResourceDir" to the directory of `BMC ENGINE/x64/Debug`.</br></br>
 Now, `hit Local Windows Debugger`!</br>
-[Here](https://github.com/Bigmancozmo/BMC-ENGINE/assets/67850768/c59a6406-0232-44a4-a706-7de328f49943
-)'s a video of this entire process if you'd rather see that:
-
+[Here](https://github.com/Bigmancozmo/BMC-ENGINE/assets/67850768/c59a6406-0232-44a4-a706-7de328f49943)'s a video of this entire process if you'd rather see that:

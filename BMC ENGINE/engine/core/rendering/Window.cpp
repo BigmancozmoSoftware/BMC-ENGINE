@@ -2,6 +2,11 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
+
 Window::Window(int width, int height, const char* title)
 {
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
@@ -36,6 +41,8 @@ Window::Window(int width, int height, const char* title)
 	glfwShowWindow(window);
 
 	glfwMakeContextCurrent(window);
+
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	glfwSetWindowIcon(window, 1, images);
 }
