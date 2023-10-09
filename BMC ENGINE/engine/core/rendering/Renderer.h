@@ -13,7 +13,7 @@ public:
 	void setBackgroundColor(int r, int g, int b);
 	void setBackgroundColor(Color* color);
 	void drawBasic();
-	void setupBasic(float verts[]);
+	void setupBasic(float verts[], int vertCount);
 	void cleanup();
 private:
 	FileManager* files;

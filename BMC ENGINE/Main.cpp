@@ -28,7 +28,7 @@ int main(){
 		0.0f, 0.5f, 0.0f
 	};
 	
-	game->renderer->setupBasic(vertices);
+	game->renderer->setupBasic(vertices, 9);
 
 	while (!game->window->shouldClose()) {
 		game->renderer->setBackgroundColor(bgColor);

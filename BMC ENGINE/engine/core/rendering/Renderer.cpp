@@ -40,27 +40,22 @@ void Renderer::setBackgroundColor(Color* color)
 
 void Renderer::drawBasic()
 {
-	cout << "draw'd" << endl;
 	glUseProgram(shaderProgram);
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-void Renderer::setupBasic(float verts[])
+void Renderer::setupBasic(float verts[], int vertCount)
 {
-	cout << "init'd" << endl;
+	cout << "OpenGL SetupBasic" << endl;
 
 	vShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vShader, 1, &vertexShader, NULL);
 	glCompileShader(vShader);
 
-	fShader = glCreateShader(GL_VERTEX_SHADER);
+	fShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fShader, 1, &fragmentShader, NULL);
 	glCompileShader(fShader);
-
-	glGenBuffers(1, &VBO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
 
 	shaderProgram = glCreateProgram();
 	glAttachShader(shaderProgram, vShader);
@@ -71,10 +66,18 @@ void Renderer::setupBasic(float verts[])
 	glDeleteShader(vShader);
 	glDeleteShader(fShader);
 
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+	glBindVertexArray(VAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float)*9, verts, GL_STATIC_DRAW);
+	
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	glGenVertexArrays(1, &VAO);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 }
 
 void Renderer::cleanup()
