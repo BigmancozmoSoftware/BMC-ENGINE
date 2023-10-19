@@ -23,12 +23,15 @@ int main(){
 	game->renderer->init();
 
 	float vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.0f, 0.5f, 0.0f
+		-0.75f, -0.75f, 0.0f,
+		-0.25f, -0.75f, 0.0f,
+		-0.25f, 0.25f, 0.0f//,
+		//1.0f, 1.0f, 0.0f,
 	};
 	
 	game->renderer->setupBasic(vertices, 9);
+
+	game->renderer->init();
 
 	while (!game->window->shouldClose()) {
 		game->renderer->setBackgroundColor(bgColor);

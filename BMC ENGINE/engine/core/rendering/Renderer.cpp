@@ -12,7 +12,7 @@ void Renderer::init()
 	vss = files->ReadFile("./resources/shaders/default/vertexShaderDefault.vert");
 	vertexShader = vss.c_str();
 	fss = files->ReadFile("./resources/shaders/default/fragmentShaderDefault.vert");
-	fragmentShader = vss.c_str();
+	fragmentShader = fss.c_str();
 	
 	gladLoadGL();
 	cout << "Renderer initialized" << endl;
@@ -49,13 +49,29 @@ void Renderer::setupBasic(float verts[], int vertCount)
 {
 	cout << "OpenGL SetupBasic" << endl;
 
+	cout << "compiling v" << endl;
 	vShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vShader, 1, &vertexShader, NULL);
 	glCompileShader(vShader);
+	int success;
+	char infoLog[512];
+	glGetShaderiv(vShader, GL_COMPILE_STATUS, &success);
+	if (!success)
+	{
+		glGetShaderInfoLog(vShader, 512, NULL, infoLog);
+		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+	}
 
+	cout << "compiling f" << endl;
 	fShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fShader, 1, &fragmentShader, NULL);
 	glCompileShader(fShader);
+	glGetShaderiv(fShader, GL_COMPILE_STATUS, &success);
+	if (!success)
+	{
+		glGetShaderInfoLog(fShader, 512, NULL, infoLog);
+		std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+	}
 
 	shaderProgram = glCreateProgram();
 	glAttachShader(shaderProgram, vShader);
