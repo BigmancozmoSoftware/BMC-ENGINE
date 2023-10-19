@@ -29,15 +29,14 @@ int main(){
 		//1.0f, 1.0f, 0.0f,
 	};
 	
-	game->renderer->setupBasic(vertices, 9);
-
 	game->renderer->init();
+	game->renderer->loadShaders();
 
 	while (!game->window->shouldClose()) {
 		game->renderer->setBackgroundColor(bgColor);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		game->renderer->drawBasic();
+		
 
 		game->window->update();
 	}

@@ -12,15 +12,15 @@ public:
 	void init();
 	void setBackgroundColor(int r, int g, int b);
 	void setBackgroundColor(Color* color);
-	void drawBasic();
-	void setupBasic(float verts[], int vertCount);
+	void draw();
+	void loadShaders();
 	void cleanup();
 private:
 	FileManager* files;
 	string vss;
 	string fss;
-	const char* fragmentShader;
-	const char* vertexShader;
+	const char* fragmentShaderSource;
+	const char* vertexShaderSource;
 	unsigned int vShader;
 	unsigned int shaderProgram;
 	unsigned int VBO, VAO;
