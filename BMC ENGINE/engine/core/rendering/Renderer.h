@@ -4,6 +4,7 @@
 #include "../file/FileManagement.h"
 #include <iostream>
 #include "glad/glad.h"
+#include <vector>
 
 class Renderer
 {
@@ -19,8 +20,6 @@ private:
 	FileManager* files;
 	string vss;
 	string fss;
-	const char* fragmentShaderSource;
-	const char* vertexShaderSource;
 	unsigned int vShader;
 	unsigned int shaderProgram;
 	unsigned int VBO, VAO;
