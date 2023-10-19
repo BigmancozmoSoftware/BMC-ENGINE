@@ -18,6 +18,8 @@ int main(){
 	game->audio->setVolume(25);
 	game->audio->playSound("./resources/sound/bass.mp3");
 
+	cout << "" << endl;
+
 	Color* bgColor = new Color(58, 96, 158);
 
 	float vertices[] = {
