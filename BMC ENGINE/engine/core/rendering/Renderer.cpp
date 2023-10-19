@@ -101,6 +101,8 @@ void Renderer::loadShaders()
 	glDeleteShader(VertexShaderID);
 	glDeleteShader(FragmentShaderID);
 
+	glUseProgram(ProgramID);
+
 	cout << "Finished loading shaders!" << endl;
 }
 
