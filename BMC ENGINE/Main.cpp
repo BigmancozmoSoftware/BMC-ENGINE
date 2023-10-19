@@ -20,8 +20,6 @@ int main(){
 
 	Color* bgColor = new Color(58, 96, 158);
 
-	game->renderer->init();
-
 	float vertices[] = {
 		-0.75f, -0.75f, 0.0f,
 		-0.25f, -0.75f, 0.0f,
