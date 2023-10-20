@@ -2,18 +2,24 @@
 
 using namespace std;
 
+float verts[];
+
 Renderer::Renderer()
 {
 	files = new FileManager();
 }
 
-void Renderer::init()
+void Renderer::init(GLfloat verts[])
 {
 	gladLoadGL();
-
-	vss = files->ReadFile("./resources/shaders/default/vertexShaderDefault.vert");
-	fss = files->ReadFile("./resources/shaders/default/fragmentShaderDefault.vert");
 	
+	glGenVertexArrays(1, &VertexArrayID);
+	glBindVertexArray(VertexArrayID);
+
+	glGenBuffers(1, &vertexBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
+
 	cout << "Renderer initialized" << endl;
 }
 
@@ -37,16 +43,32 @@ void Renderer::setBackgroundColor(Color* color)
 	glClearColor(((float)r) / 255, ((float)g) / 255, ((float)b) / 255, 1);
 }
 
-void Renderer::draw()
+void Renderer::draw(GLfloat verts[])
 {
-	
+	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+	glVertexAttribPointer(
+		0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+		3,                  // size
+		GL_FLOAT,           // type
+		GL_FALSE,           // normalized?
+		0,                  // stride
+		(void*)0            // array buffer offset
+	);
+	// Draw the triangle !
+	glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
+	glDisableVertexAttribArray(0);
 }
 
 void Renderer::loadShaders()
 {
+	vss = files->ReadFile("./resources/shaders/default/vertexShaderDefault.vert");
+	fss = files->ReadFile("./resources/shaders/default/fragmentShaderDefault.vert");
+
+	gladLoadGL();
 	// code from http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/
-	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
-	GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
+	VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
+	FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
 	GLint Result = GL_FALSE;
 	int InfoLogLength;
@@ -81,7 +103,7 @@ void Renderer::loadShaders()
 
 	cout << "Creating program" << endl;
 
-	GLuint ProgramID = glCreateProgram();
+	ProgramID = glCreateProgram();
 	glAttachShader(ProgramID, VertexShaderID);
 	glAttachShader(ProgramID, FragmentShaderID);
 	glLinkProgram(ProgramID);
@@ -109,7 +131,5 @@ void Renderer::loadShaders()
 void Renderer::cleanup()
 {
 	cout << "cleanup" << endl;
-	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &VBO);
-	glDeleteProgram(shaderProgram);
+	glDeleteProgram(ProgramID);
 }

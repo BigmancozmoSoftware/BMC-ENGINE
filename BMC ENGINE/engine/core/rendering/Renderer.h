@@ -10,18 +10,19 @@ class Renderer
 {
 public:
 	Renderer();
-	void init();
+	void init(GLfloat verts[]);
 	void setBackgroundColor(int r, int g, int b);
 	void setBackgroundColor(Color* color);
-	void draw();
+	void draw(GLfloat verts[]);
 	void loadShaders();
 	void cleanup();
 private:
 	FileManager* files;
 	string vss;
 	string fss;
-	unsigned int vShader;
-	unsigned int shaderProgram;
-	unsigned int VBO, VAO;
-	unsigned int fShader;
+	GLuint VertexShaderID;
+	GLuint FragmentShaderID;
+	GLuint ProgramID;
+	GLuint vertexBuffer;
+	GLuint VertexArrayID;
 };

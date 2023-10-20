@@ -22,22 +22,17 @@ int main(){
 
 	Color* bgColor = new Color(58, 96, 158);
 
-	float vertices[] = {
+	GLfloat vertices[] = {
 		-0.75f, -0.75f, 0.0f,
 		-0.25f, -0.75f, 0.0f,
 		-0.25f, 0.25f, 0.0f//,
 		//1.0f, 1.0f, 0.0f,
 	};
-	
-	game->renderer->init();
-	game->renderer->loadShaders();
 
 	while (!game->window->shouldClose()) {
 		game->renderer->setBackgroundColor(bgColor);
-		glClear(GL_COLOR_BUFFER_BIT);
 
-		
-
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		game->window->update();
 	}
 	
