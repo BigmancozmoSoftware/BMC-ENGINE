@@ -8,7 +8,7 @@ public:
 	Game();
 	Audio* audio;
 	Window* window;
-	Renderer* renderer;
+	//Renderer* renderer;
 	Math* math;
 	FileManager* files;
 	KeyboardInput* keyboard;

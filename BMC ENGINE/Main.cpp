@@ -29,14 +29,20 @@ int main(){
 		//1.0f, 1.0f, 0.0f,
 	};
 
+	// RENDERER INIT START
+
+	cout << glfwVulkanSupported() << endl;
+
+	// RENDERER INIT END
+
 	while (!game->window->shouldClose()) {
-		game->renderer->setBackgroundColor(bgColor);
+		//game->renderer->setBackgroundColor(bgColor);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		game->window->update();
 	}
 	
-	game->renderer->cleanup();
+	//game->renderer->cleanup();
 
 	glfwTerminate();
 

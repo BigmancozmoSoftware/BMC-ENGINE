@@ -110,7 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;fmodL_vc.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,7 +129,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;fmodL_vc.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/ENTRY:mainCRTStartup %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -141,7 +141,6 @@
     <ClInclude Include="engine\core\file\FileManagement.h" />
     <ClInclude Include="engine\framework\Scene.h" />
     <ClInclude Include="engine\framework\GameObject\GameObjectBase.h" />
-    <ClInclude Include="engine\core\rendering\Renderer.h" />
     <ClInclude Include="engine\framework\Game.h" />
     <ClInclude Include="GameSettings.h" />
     <ClInclude Include="engine\framework\Math.h" />
@@ -162,7 +161,6 @@
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
     <ClCompile Include="engine\core\rendering\Window.cpp" />
-    <ClCompile Include="engine\core\rendering\Renderer.cpp" />
     <ClCompile Include="engine\core\rendering\glad.c" />
     <ClCompile Include="engine\framework\input\KeyboardInput.cpp" />
     <ClCompile Include="engine\framework\scripts\Game.cpp" />
