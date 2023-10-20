@@ -1,5 +1,7 @@
 #pragma once
 
+#define GLFW_INCLUDE_VULKAN
+
 #include "framework/Scene.h"
 #include "framework/GameObject/Shapes.h"
 #include "framework/GameObject/objects/ShapeObject.h"
