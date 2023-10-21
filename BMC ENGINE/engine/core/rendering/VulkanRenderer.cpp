@@ -1,4 +1,5 @@
 #include "VulkanRenderer.h"
+#include "../../framework/Game.h"
 
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
@@ -11,9 +12,9 @@ static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     return VK_FALSE;
 }
 
-VulkanRenderer::VulkanRenderer()
+VulkanRenderer::VulkanRenderer(Game* game)
 {
-	loadVulkan();
+	loadVulkan(game);
 }
 
 void VulkanRenderer::createInstance()
@@ -90,6 +91,14 @@ bool VulkanRenderer::checkValidationLayerSupport()
 	return true;
 }
 
+void VulkanRenderer::createSurface(Game* game)
+{
+	VkWin32SurfaceCreateInfoKHR screateInfo{};
+	screateInfo.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
+	screateInfo.hwnd = glfwGetWin32Window(game->window->getWindow());
+	screateInfo.hinstance = GetModuleHandle(nullptr);
+}
+
 std::vector<const char*> VulkanRenderer::getRequiredExtensions()
 {
 	uint32_t glfwExtensionCount = 0;
@@ -105,9 +114,10 @@ std::vector<const char*> VulkanRenderer::getRequiredExtensions()
 	return extensions;
 }
 
-void VulkanRenderer::loadVulkan()
+void VulkanRenderer::loadVulkan(Game* game)
 {
 	createInstance();
+	createSurface(game);
 	getExtensions();
 }
 

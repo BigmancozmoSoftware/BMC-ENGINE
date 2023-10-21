@@ -3,7 +3,7 @@
 Game::Game()
 {
 	audio = new Audio();
-	renderer = new VulkanRenderer();
+	renderer = new VulkanRenderer(this);
 	math = new Math();
 	window = new Window(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, GAME_WINDOW_TITLE);
 	files = new FileManager();

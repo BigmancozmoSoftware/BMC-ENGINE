@@ -15,8 +15,8 @@ using namespace std;
 class VulkanRenderer
 {
 public:
-	VulkanRenderer();
-	void loadVulkan();
+	VulkanRenderer(Game* game);
+	void loadVulkan(Game* game);
 	~VulkanRenderer();
 private:
 	VkInstance instance;
@@ -28,11 +28,13 @@ private:
 	const std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"
 	};
+	std::vector <const char*> getRequiredExtensions();
+	VkSurfaceKHR surface;
 
 	void getExtensions();
 	void checkCompatibility();
 	void createInstance();
 	bool validationLayersEnabled();
 	bool checkValidationLayerSupport();
-	std::vector <const char*> getRequiredExtensions();
+	void createSurface(Game* game);
 };
