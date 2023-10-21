@@ -6,9 +6,9 @@ float verts[];
 
 Renderer::Renderer()
 {
-	files = new FileManager();
+	//files = new FileManager();
 }
-
+/*
 void Renderer::init(GLfloat verts[])
 {
 	gladLoadGL();
@@ -133,3 +133,4 @@ void Renderer::cleanup()
 	cout << "cleanup" << endl;
 	glDeleteProgram(ProgramID);
 }
+*/

@@ -9,6 +9,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 Window::Window(int width, int height, const char* title)
 {
+	cout << "Window created." << endl;
+
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* vidMode = glfwGetVideoMode(monitor);
 
@@ -43,7 +45,7 @@ Window::Window(int width, int height, const char* title)
 
 	glfwMakeContextCurrent(window);
 
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	//glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	glfwSetWindowIcon(window, 1, images);
 }

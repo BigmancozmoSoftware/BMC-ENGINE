@@ -66,6 +66,9 @@
     <ClInclude Include="engine\core\rendering\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\core\rendering\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\framework\scripts\Scene.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\scripts\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\rendering\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
