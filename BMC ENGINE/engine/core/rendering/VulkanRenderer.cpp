@@ -1,5 +1,4 @@
 #include "VulkanRenderer.h"
-#include "../../framework/Game.h"
 
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,

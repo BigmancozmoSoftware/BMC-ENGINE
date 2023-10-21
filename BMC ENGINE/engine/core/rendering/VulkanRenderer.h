@@ -9,6 +9,7 @@
 #include <vulkan/vulkan.h>
 #include <vector>
 #include <iostream>
+#include "../../framework/Game.h"
 
 using namespace std;
 
