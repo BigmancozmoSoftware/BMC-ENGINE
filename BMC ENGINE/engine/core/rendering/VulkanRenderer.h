@@ -12,10 +12,7 @@ class VulkanRenderer
 {
 public:
 	VulkanRenderer();
-	void createInstance();
 	void loadVulkan();
-	void getExtensions();
-	void checkCompatibility();
 	~VulkanRenderer();
 private:
 	VkInstance instance;
@@ -24,5 +21,10 @@ private:
 	uint32_t glfwExtensionCount = 0;
 	const char** glfwExtensions;
 	uint32_t extensionCount = 0;
-};
 
+	void getExtensions();
+	void checkCompatibility();
+	void createInstance();
+	bool validationLayersEnabled();
+	bool checkValidationLayerSupport();
+};
