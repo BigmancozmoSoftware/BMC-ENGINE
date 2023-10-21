@@ -11,6 +11,14 @@ void VulkanRenderer::createInstance()
 		throw std::runtime_error("validation layers requested, but not available!");
 	}
 
+	if (validationLayersEnabled()) {
+		createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
+		createInfo.ppEnabledLayerNames = validationLayers.data();
+	}
+	else {
+		createInfo.enabledLayerCount = 0;
+	}
+
 	appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
 	appInfo.pApplicationName = "Hello Triangle";
 	appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
@@ -43,10 +51,6 @@ bool VulkanRenderer::validationLayersEnabled()
 
 bool VulkanRenderer::checkValidationLayerSupport()
 {
-	const std::vector<const char*> validationLayers = {
-		"VK_LAYER_KHRONOS_validation"
-	};
-
 	uint32_t layerCount;
 	vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
 
@@ -69,6 +73,21 @@ bool VulkanRenderer::checkValidationLayerSupport()
 	}
 
 	return true;
+}
+
+std::vector<const char*> VulkanRenderer::getRequiredExtensions()
+{
+	uint32_t glfwExtensionCount = 0;
+	const char** glfwExtensions;
+	glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
+
+	std::vector<const char*> extensions(glfwExtensions, glfwExtensions + glfwExtensionCount);
+
+	if (validationLayersEnabled()) {
+		extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
+	}
+
+	return extensions;
 }
 
 void VulkanRenderer::loadVulkan()

@@ -21,10 +21,14 @@ private:
 	uint32_t glfwExtensionCount = 0;
 	const char** glfwExtensions;
 	uint32_t extensionCount = 0;
+	const std::vector<const char*> validationLayers = {
+		"VK_LAYER_KHRONOS_validation"
+	};
 
 	void getExtensions();
 	void checkCompatibility();
 	void createInstance();
 	bool validationLayersEnabled();
 	bool checkValidationLayerSupport();
+	std::vector <const char*> getRequiredExtensions();
 };
