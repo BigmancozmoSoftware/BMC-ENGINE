@@ -43,3 +43,7 @@ private:
 	void createSurface(Window* game);
 	void pickPhysicalDevice();
 };
+
+struct QueueFamilyIndices {
+	uint32_t graphicsFamily;
+};
