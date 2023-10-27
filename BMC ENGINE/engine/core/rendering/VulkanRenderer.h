@@ -33,6 +33,8 @@ private:
 	};
 	std::vector <const char*> getRequiredExtensions();
 	VkSurfaceKHR surface;
+	VkDevice logicaldevice;
+
 	VkPhysicalDevice physicalDevice = nullptr;
 
 	bool isDeviceSuitable(VkPhysicalDevice device);
@@ -43,6 +45,8 @@ private:
 	bool checkValidationLayerSupport();
 	void createSurface(Window* game);
 	void pickPhysicalDevice();
+	void createLogicalDevice();
+	void cleanup();
 };
 
 struct QueueFamilyIndices {
