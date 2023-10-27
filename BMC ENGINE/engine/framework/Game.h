@@ -8,10 +8,11 @@ public:
 	Game();
 	Audio* audio;
 	Window* window;
-	Renderer* renderer;
+	VulkanRenderer* renderer;
 	Math* math;
 	FileManager* files;
 	KeyboardInput* keyboard;
 	MouseInput* mouse;
+	~Game();
 };
 

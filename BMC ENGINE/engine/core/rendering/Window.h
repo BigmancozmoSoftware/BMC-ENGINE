@@ -1,5 +1,7 @@
 #pragma once
-#include "../../BMCEngine.h"
+
+#include <GLFW/glfw3.h>
+#include <iostream>
 
 class Window
 {

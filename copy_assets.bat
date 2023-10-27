@@ -16,4 +16,3 @@ robocopy "assets" "../../x64/Debug/resources" /s /e
 
 echo Copying to Release
 robocopy "assets" "../../x64/Release/resources" /s /e
-pause

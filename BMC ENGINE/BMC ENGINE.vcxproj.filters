@@ -60,13 +60,13 @@
     <ClInclude Include="PrivateData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\rendering\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\framework\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\core\rendering\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\rendering\VulkanRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,13 +107,13 @@
     <ClCompile Include="engine\core\rendering\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\rendering\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\core\rendering\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\scripts\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\core\rendering\VulkanRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

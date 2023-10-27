@@ -4,6 +4,7 @@
 #include "FMOD/fmod.h"
 #include <Windows.h>
 #include "PrivateData.h"
+#include <vector>
 
 int main(){
 	glfwInit();
@@ -18,30 +19,21 @@ int main(){
 	game->audio->setVolume(25);
 	game->audio->playSound("./resources/sound/bass.mp3");
 
+	cout << "" << endl;
+
 	Color* bgColor = new Color(58, 96, 158);
 
-	game->renderer->init();
-
-	float vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.0f, 0.5f, 0.0f
+	GLfloat vertices[] = {
+		-0.75f, -0.75f, 0.0f,
+		-0.25f, -0.75f, 0.0f,
+		-0.25f, 0.25f, 0.0f
 	};
-	
-	game->renderer->setupBasic(vertices, 9);
 
-	while (!game->window->shouldClose()) {
-		game->renderer->setBackgroundColor(bgColor);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		game->renderer->drawBasic();
-
+	while (!glfwWindowShouldClose(game->window->getWindow())) {
 		game->window->update();
 	}
 	
-	game->renderer->cleanup();
-
-	glfwTerminate();
+	game->~Game();
 
 	return 0;
 }

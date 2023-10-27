@@ -1,19 +1,18 @@
 #include "Window.h"
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	glViewport(0, 0, width, height);
-}
-
 Window::Window(int width, int height, const char* title)
 {
+	std::cout << "Window created." << std::endl;
+
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* vidMode = glfwGetVideoMode(monitor);
 
 	glfwDefaultWindowHints();
-	glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
 	if (width == 0) {
 		width = vidMode->width * 0.9;
@@ -29,7 +28,7 @@ Window::Window(int width, int height, const char* title)
 	unsigned char* pixels = stbi_load("./resources/images/logo/bmcenginelogo_64x.png", &img_width, &img_height, &channels, 4);
 
 	if (stbi_failure_reason()) {
-		std::cout << "Image failed to load: " << stbi_failure_reason() << endl;
+		std::cout << "Image failed to load: " << stbi_failure_reason() << std::endl;
 	}
 
 	GLFWimage images[1];
@@ -41,8 +40,6 @@ Window::Window(int width, int height, const char* title)
 	glfwShowWindow(window);
 
 	glfwMakeContextCurrent(window);
-
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	glfwSetWindowIcon(window, 1, images);
 }
