@@ -5,7 +5,7 @@
 
 Window::Window(int width, int height, const char* title)
 {
-	cout << "Window created." << endl;
+	std::cout << "Window created." << std::endl;
 
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* vidMode = glfwGetVideoMode(monitor);
@@ -28,7 +28,7 @@ Window::Window(int width, int height, const char* title)
 	unsigned char* pixels = stbi_load("./resources/images/logo/bmcenginelogo_64x.png", &img_width, &img_height, &channels, 4);
 
 	if (stbi_failure_reason()) {
-		std::cout << "Image failed to load: " << stbi_failure_reason() << endl;
+		std::cout << "Image failed to load: " << stbi_failure_reason() << std::endl;
 	}
 
 	GLFWimage images[1];
