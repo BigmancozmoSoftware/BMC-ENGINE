@@ -207,6 +207,10 @@ QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device) {
 			indices.graphicsFamily = i;
 		}
 
+		if (indices.isComplete()) {
+			break;
+		}
+
 		i++;
 	}
 
