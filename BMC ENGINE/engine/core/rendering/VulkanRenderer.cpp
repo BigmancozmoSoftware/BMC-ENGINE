@@ -11,7 +11,7 @@ static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     return VK_FALSE;
 }
 
-VulkanRenderer::VulkanRenderer(Game* game)
+VulkanRenderer::VulkanRenderer(Window* game)
 {
 	loadVulkan(game);
 }
@@ -90,12 +90,35 @@ bool VulkanRenderer::checkValidationLayerSupport()
 	return true;
 }
 
-void VulkanRenderer::createSurface(Game* game)
+void VulkanRenderer::createSurface(Window* game)
 {
 	VkWin32SurfaceCreateInfoKHR screateInfo{};
 	screateInfo.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
-	screateInfo.hwnd = glfwGetWin32Window(game->window->getWindow());
+	screateInfo.hwnd = glfwGetWin32Window(game->getWindow());
 	screateInfo.hinstance = GetModuleHandle(nullptr);
+}
+
+void VulkanRenderer::pickPhysicalDevice()
+{
+	uint32_t deviceCount = 0;
+	vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
+	if (deviceCount == 0) {
+		cout << "failed to find GPUs with Vulkan support!" << endl;
+	}
+	cout << "devices found with vulkan support: " << deviceCount << endl;
+	std::vector<VkPhysicalDevice> devices(deviceCount);
+	vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
+
+	for (const auto& device : devices) {
+		if (isDeviceSuitable(device)) {
+			physicalDevice = device;
+			break;
+		}
+	}
+
+	if (physicalDevice == VK_NULL_HANDLE) {
+		cout << "failed to find a suitable GPU!" << endl;
+	}
 }
 
 std::vector<const char*> VulkanRenderer::getRequiredExtensions()
@@ -113,11 +136,17 @@ std::vector<const char*> VulkanRenderer::getRequiredExtensions()
 	return extensions;
 }
 
-void VulkanRenderer::loadVulkan(Game* game)
+void VulkanRenderer::loadVulkan(Window* game)
 {
 	createInstance();
 	createSurface(game);
 	getExtensions();
+	pickPhysicalDevice();
+}
+
+bool VulkanRenderer::isDeviceSuitable(VkPhysicalDevice device)
+{
+	return true;
 }
 
 void VulkanRenderer::getExtensions()

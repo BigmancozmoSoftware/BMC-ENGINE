@@ -9,15 +9,16 @@
 #include <vulkan/vulkan.h>
 #include <vector>
 #include <iostream>
-#include "../../framework/Game.h"
+
+#include "Window.h"
 
 using namespace std;
 
 class VulkanRenderer
 {
 public:
-	VulkanRenderer(Game* game);
-	void loadVulkan(Game* game);
+	VulkanRenderer(Window* game);
+	void loadVulkan(Window* game);
 	~VulkanRenderer();
 private:
 	VkInstance instance;
@@ -31,11 +32,14 @@ private:
 	};
 	std::vector <const char*> getRequiredExtensions();
 	VkSurfaceKHR surface;
+	VkPhysicalDevice physicalDevice = nullptr;
 
+	bool isDeviceSuitable(VkPhysicalDevice device);
 	void getExtensions();
 	void checkCompatibility();
 	void createInstance();
 	bool validationLayersEnabled();
 	bool checkValidationLayerSupport();
-	void createSurface(Game* game);
+	void createSurface(Window* game);
+	void pickPhysicalDevice();
 };
