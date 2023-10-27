@@ -1,5 +1,6 @@
 #include "VulkanRenderer.h"
 
+// validation error handler
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
     VkDebugUtilsMessageTypeFlagsEXT messageType,
@@ -18,6 +19,7 @@ VulkanRenderer::VulkanRenderer(Window* game)
 
 void VulkanRenderer::createInstance()
 {
+        // check validation layers
 	if (validationLayersEnabled() && !checkValidationLayerSupport()) {
 		throw std::runtime_error("validation layers requested, but not available!");
 	}
@@ -31,8 +33,9 @@ void VulkanRenderer::createInstance()
 
 	createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 	createInfo.pApplicationInfo = &appInfo;
-
-	if (validationLayersEnabled()) {
+       
+        // check validation layers again
+    	if (validationLayersEnabled()) {
 		createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
 		createInfo.ppEnabledLayerNames = validationLayers.data();
 	}
@@ -40,6 +43,7 @@ void VulkanRenderer::createInstance()
 		createInfo.enabledLayerCount = 0;
 	}
 
+        // get extensions
 	auto extensions = getRequiredExtensions();
 	createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
 	createInfo.ppEnabledExtensionNames = extensions.data();
