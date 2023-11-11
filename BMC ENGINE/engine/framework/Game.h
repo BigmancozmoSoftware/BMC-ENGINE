@@ -8,7 +8,6 @@ public:
 	Game();
 	Audio* audio;
 	Window* window;
-	VulkanRenderer* renderer;
 	Math* math;
 	FileManager* files;
 	KeyboardInput* keyboard;

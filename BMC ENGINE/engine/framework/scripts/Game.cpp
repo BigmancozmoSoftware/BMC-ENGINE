@@ -8,11 +8,9 @@ Game::Game()
 	files = new FileManager();
 	keyboard = new KeyboardInput(window->getWindow());
 	mouse = new MouseInput(window->getWindow());
-	renderer = new VulkanRenderer(window);
 }
 
 Game::~Game()
 {
 	glfwTerminate();
-	renderer->~VulkanRenderer();
 }
