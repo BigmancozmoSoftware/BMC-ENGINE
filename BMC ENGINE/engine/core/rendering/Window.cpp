@@ -11,8 +11,8 @@ Window::Window(int width, int height, const char* title)
 	const GLFWvidmode* vidMode = glfwGetVideoMode(monitor);
 
 	glfwDefaultWindowHints();
-	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
 	if (width == 0) {
 		width = vidMode->width * 0.9;
