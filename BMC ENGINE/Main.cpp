@@ -1,5 +1,3 @@
-// hi welcome to bmc engine
-
 #include "engine/framework/Game.h"
 #include "FMOD/fmod.h"
 #include <Windows.h>
@@ -24,6 +22,7 @@ int main(){
 	Color* bgColor = new Color(58, 96, 158);
 
 	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/fragmentShader");
+	const char* vertexShaderSource = vertexShaderStr.c_str();
 
 	float vertices[] = {
 		-0.5f, -0.5f, 0.0f,
