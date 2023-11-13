@@ -4,6 +4,8 @@
 #include "PrivateData.h"
 #include <vector>
 
+using namespace std;
+
 int main(){
 	glfwInit();
 
@@ -23,6 +25,8 @@ int main(){
 
 	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/fragmentShader");
 	const char* vertexShaderSource = vertexShaderStr.c_str();
+	
+	cout << vertexShaderSource << endl;
 
 	float vertices[] = {
 		-0.5f, -0.5f, 0.0f,
