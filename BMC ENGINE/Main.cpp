@@ -26,7 +26,9 @@ int main(){
 	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/fragmentShader");
 	const char* vertexShaderSource = vertexShaderStr.c_str();
 	
-	cout << vertexShaderSource << endl;
+	if(vertexShaderSource == ""){
+		return -1;
+	}
 
 	float vertices[] = {
 		-0.5f, -0.5f, 0.0f,
