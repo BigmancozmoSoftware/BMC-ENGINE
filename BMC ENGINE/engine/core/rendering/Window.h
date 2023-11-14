@@ -6,11 +6,13 @@
 class Window
 {
 public:
-	Window(int width, int height, const char* title);
+	Window(int w, int h, const char* title);
 	void update();
 	bool shouldClose();
 	void close();
 	GLFWwindow* getWindow();
+	int width;
+	int height;
 private:
 	GLFWwindow* window;
 };
