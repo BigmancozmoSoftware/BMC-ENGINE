@@ -11,7 +11,6 @@ public:
 	bool shouldClose();
 	void close();
 	GLFWwindow* getWindow();
-	auto getProcAddress();
 private:
 	GLFWwindow* window;
 };
