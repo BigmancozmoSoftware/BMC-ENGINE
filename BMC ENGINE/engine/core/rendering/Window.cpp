@@ -3,8 +3,11 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
-Window::Window(int width, int height, const char* title)
+Window::Window(int w, int h, const char* title)
 {
+	width = w;
+	height = h;
+
 	std::cout << "Window created." << std::endl;
 
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
