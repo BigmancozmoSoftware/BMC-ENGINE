@@ -23,12 +23,10 @@ int main(){
 
 	Color* bgColor = new Color(58, 96, 158);
 
-	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/fragmentShader");
+	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/vertexShader.vert");
+	string fragmentShaderStr = game->files->ReadFile("./resources/shaders/default/fragmentShader.frag");
 	const char* vertexShaderSource = vertexShaderStr.c_str();
-	
-	if(vertexShaderSource == ""){
-		return -1;
-	}
+	const char* fragmentShaderSource = fragmentShaderStr.c_str();
 
 	float vertices[] = {
 		-0.5f, -0.5f, 0.0f,
