@@ -6,6 +6,10 @@
 
 using namespace std;
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+	glViewport(0, 0, width, height);
+}
+
 int main(){
 	glfwInit();
 
@@ -29,8 +33,7 @@ int main(){
 		return -1;
 	}
 	glViewport(0, 0, game->window->width, game->window->height);
-
-	
+	glfwSetFramebufferSizeCallback(game->window->getWindow(), framebuffer_size_callback);
 
 	// DEFINITIONS
 	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/vertexShader.vert");
@@ -64,9 +67,19 @@ int main(){
 
 	float vertices[] = {
 		// Triangle 1
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f,
+		 0.0f,   0.75f, 0.0f,
+		 0.5f,  0.0f,  0.0f,
+		 -0.5f, 0.0f, 0.0f,
+
+		// Triangle 2
+		 -0.5, 0.0f, 0.0f,
+		 0.5, 0.0f, 0.0f,
+		 -0.25, -0.75f, 0.0f,
+
+		// Triangle 3
+		 -0.25, -0.75f, 0.0f,
+		 0.5, 0.0f, 0.0f,
+		 0.25, -0.75, 0.0f
 	};
 
 	// VBO/VAO
@@ -91,7 +104,7 @@ int main(){
 		glUseProgram(shaderProgram);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		glDrawArrays(GL_TRIANGLES, 0, 9);
 
 		glBindVertexArray(0);
 
