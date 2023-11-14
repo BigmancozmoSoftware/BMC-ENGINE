@@ -35,6 +35,9 @@ int main(){
 	const char* vertexShaderSource = vertexShaderStr.c_str();
 	const char* fragmentShaderSource = fragmentShaderStr.c_str();
 
+	unsigned int vertexShader;
+	unsigned int fragmentShader;
+
 	float vertices[] = {
 		-0.5f, -0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
