@@ -65,3 +65,8 @@ GLFWwindow* Window::getWindow()
 {
 	return window;
 }
+
+auto Window::getProcAddress()
+{
+	return glfwGetProcAddress;
+}
