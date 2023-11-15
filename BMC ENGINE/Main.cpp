@@ -6,10 +6,6 @@
 
 using namespace std;
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
-}
-
 int main(){
 	glfwInit();
 
@@ -23,7 +19,7 @@ int main(){
 	game->audio->setVolume(25);
 	game->audio->playSound("./resources/sound/bass.mp3");
 
-	cout << "" << endl;
+	ConsoleUtils::blankLine();
 
 	Color* bgColor = new Color(58, 96, 158);
 
@@ -32,8 +28,11 @@ int main(){
 		std::cerr << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
+
 	glViewport(0, 0, game->window->width, game->window->height);
-	glfwSetFramebufferSizeCallback(game->window->getWindow(), framebuffer_size_callback);
+#if SETTINGS_ANTIALIASING
+	glEnable(GL_MULTISAMPLE);
+#endif
 
 	// DEFINITIONS
 	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/vertexShader.vert");
@@ -67,19 +66,19 @@ int main(){
 
 	float vertices[] = {
 		// Triangle 1
-		 0.0f, 0.75f, 0.0f,
-		 0.5f, 0.0f, 0.0f,
-		 -0.5f, 0.0f, 0.0f,
+		 0.0f, 0.6f, 0.0f,
+		 0.35f, 0.0f, 0.0f,
+		 -0.35f, 0.0f, 0.0f,
 
 		// Triangle 2
-		 -0.5, 0.0f, 0.0f,
-		 0.5, 0.0f, 0.0f,
-		 -0.25, -0.75f, 0.0f,
+		 -0.35, 0.0f, 0.0f,
+		 0.35, 0.0f, 0.0f,
+		 -0.2, -0.75f, 0.0f,
 
 		// Triangle 3
-		 -0.25, -0.75f, 0.0f,
-		 0.5, 0.0f, 0.0f,
-		 0.25, -0.75, 0.0f
+		 -0.2, -0.75f, 0.0f,
+		 0.35, 0.0f, 0.0f,
+		 0.2, -0.75, 0.0f
 	};
 
 	size_t arraySize = sizeof(vertices) / sizeof(vertices[0]);
