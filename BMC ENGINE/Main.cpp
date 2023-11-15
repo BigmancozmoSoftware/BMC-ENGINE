@@ -26,7 +26,7 @@ int main(){
 	game->audio->setVolume(25);
 	game->audio->playSound("./resources/sound/bass.mp3");
 
-	cout << "" << endl;
+	ConsoleUtils::blankLine();
 
 	Color* bgColor = new Color(58, 96, 158);
 
@@ -35,6 +35,7 @@ int main(){
 		std::cerr << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
+
 	glViewport(0, 0, game->window->width, game->window->height);
 #if SETTINGS_ANTIALIASING
 	glEnable(GL_MULTISAMPLE);

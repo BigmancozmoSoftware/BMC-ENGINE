@@ -136,6 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="engine\framework\util\ConsoleUtils.h" />
     <ClInclude Include="engine\framework\util\ArrayLength.h" />
     <ClInclude Include="engine\core\audio\Audio.h" />
     <ClInclude Include="engine\framework\DeltaTime.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="engine\core\rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\framework\util\ConsoleUtils.cpp" />
     <ClCompile Include="engine\framework\util\ArrayLength.cpp" />
     <ClCompile Include="engine\core\audio\Audio.cpp" />
     <ClCompile Include="engine\framework\scripts\DeltaTime.cpp" />
