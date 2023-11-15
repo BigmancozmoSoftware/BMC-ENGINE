@@ -2,6 +2,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
+#include "../../../GameSettings.h"
 
 Window::Window(int w, int h, const char* title)
 {
@@ -17,6 +18,9 @@ Window::Window(int w, int h, const char* title)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#if SETTINGS_ANTIALIASING
+	glfwWindowHint(GLFW_SAMPLES, SETTINGS_ANTIALIASING_LEVEL);
+#endif
 
 	if (width == 0) {
 		width = vidMode->width * 0.9;

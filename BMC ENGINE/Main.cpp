@@ -8,6 +8,9 @@ using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
+#if SETTINGS_ANTIALIASING
+	glEnable(GL_MULTISAMPLE);
+#endif
 }
 
 int main(){
@@ -33,6 +36,9 @@ int main(){
 		return -1;
 	}
 	glViewport(0, 0, game->window->width, game->window->height);
+#if SETTINGS_ANTIALIASING
+	glEnable(GL_MULTISAMPLE);
+#endif
 	glfwSetFramebufferSizeCallback(game->window->getWindow(), framebuffer_size_callback);
 
 	// DEFINITIONS
