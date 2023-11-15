@@ -8,3 +8,4 @@
 
 // Game Default Settings //
 #define SETTINGS_ANTIALIASING true
+#define SETTINGS_ANTIALIASING_LEVEL 8
