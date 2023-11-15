@@ -4,6 +4,12 @@
 #include "stb/stb_image.h"
 #include "../../../GameSettings.h"
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+        glViewport(0, 0, width, height);
+#if SETTINGS_ANTIALIASING                                                 glEnable(GL_MULTISAMPLE);
+#endif
+}
+
 Window::Window(int w, int h, const char* title)
 {
 	width = w;
