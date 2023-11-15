@@ -3,10 +3,12 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 #include "../../../GameSettings.h"
+#include <glad/glad.h>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
         glViewport(0, 0, width, height);
-#if SETTINGS_ANTIALIASING                                                 glEnable(GL_MULTISAMPLE);
+#if SETTINGS_ANTIALIASING
+		glEnable(GL_MULTISAMPLE);
 #endif
 }
 
@@ -36,7 +38,8 @@ Window::Window(int w, int h, const char* title)
 	}
 	
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
-	
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
 	int img_width, img_height;
 	int channels;
 	unsigned char* pixels = stbi_load("./resources/images/logo/bmcenginelogo_64x.png", &img_width, &img_height, &channels, 4);

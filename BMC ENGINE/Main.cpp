@@ -6,13 +6,6 @@
 
 using namespace std;
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
-#if SETTINGS_ANTIALIASING
-	glEnable(GL_MULTISAMPLE);
-#endif
-}
-
 int main(){
 	glfwInit();
 
@@ -40,7 +33,6 @@ int main(){
 #if SETTINGS_ANTIALIASING
 	glEnable(GL_MULTISAMPLE);
 #endif
-	glfwSetFramebufferSizeCallback(game->window->getWindow(), framebuffer_size_callback);
 
 	// DEFINITIONS
 	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/vertexShader.vert");
