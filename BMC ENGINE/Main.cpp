@@ -35,62 +35,52 @@ int main(){
 #endif
 
 	// DEFINITIONS
-	string vertexShaderStr = game->files->ReadFile("./resources/shaders/default/vertexShader.vert");
-	string fragmentShaderStr = game->files->ReadFile("./resources/shaders/default/fragmentShader.frag");
-	const char* vertexShaderSource = vertexShaderStr.c_str();
-	const char* fragmentShaderSource = fragmentShaderStr.c_str();
-	unsigned int vertexShader;
-	unsigned int fragmentShader;
-	unsigned int shaderProgram;
-	unsigned int VBO, VAO;
-	int success;
-	char infoLog[512];
-
-	// VS/FS
-	vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-	glCompileShader(vertexShader);
-	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-	glCompileShader(fragmentShader);
-
-	// Shader program
-	shaderProgram = glCreateProgram();
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragmentShader);
-	glLinkProgram(shaderProgram);
-
-	// Delete shaders, they're in the program
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
-
 	float vertices[] = {
 		// Triangle 1
 		 0.0f, 0.6f, 0.0f,
 		 0.35f, 0.0f, 0.0f,
 		 -0.35f, 0.0f, 0.0f,
 
-		// Triangle 2
-		 -0.35, 0.0f, 0.0f,
-		 0.35, 0.0f, 0.0f,
-		 -0.2, -0.75f, 0.0f,
+		 // Triangle 2
+		  -0.35, 0.0f, 0.0f,
+		  0.35, 0.0f, 0.0f,
+		  -0.2, -0.75f, 0.0f,
 
-		// Triangle 3
-		 -0.2, -0.75f, 0.0f,
-		 0.35, 0.0f, 0.0f,
-		 0.2, -0.75, 0.0f
+		  // Triangle 3
+		   -0.2, -0.75f, 0.0f,
+		   0.35, 0.0f, 0.0f,
+		   0.2, -0.75, 0.0f
 	};
+	game->renderer->setup(vertices, sizeof(vertices));
+
+	// VS/FS
+	game->renderer->vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(game->renderer->vertexShader, 1, &game->renderer->vertexShaderSource, NULL);
+	glCompileShader(game->renderer->vertexShader);
+	game->renderer->fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(game->renderer->fragmentShader, 1, &game->renderer->fragmentShaderSource, NULL);
+	glCompileShader(game->renderer->fragmentShader);
+
+	// Shader program
+	game->renderer->shaderProgram = glCreateProgram();
+	glAttachShader(game->renderer->shaderProgram, game->renderer->vertexShader);
+	glAttachShader(game->renderer->shaderProgram, game->renderer->fragmentShader);
+	glLinkProgram(game->renderer->shaderProgram);
+
+	// Delete shaders, they're in the program
+	glDeleteShader(game->renderer->vertexShader);
+	glDeleteShader(game->renderer->fragmentShader);
 
 	size_t arraySize = sizeof(vertices) / sizeof(vertices[0]);
 	int vertAmount = (int)(arraySize / 3);
 	cout << "\namount of verts is " << vertAmount << endl;
 
 	// VBO/VAO
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
+	glGenVertexArrays(1, &game->renderer->VAO);
+	glGenBuffers(1, &game->renderer->VBO);
 
-	glBindVertexArray(VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBindVertexArray(game->renderer->VAO);
+	glBindBuffer(GL_ARRAY_BUFFER, game->renderer->VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
@@ -104,9 +94,9 @@ int main(){
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glUseProgram(shaderProgram);
+		glUseProgram(game->renderer->shaderProgram);
 
-		glBindVertexArray(VAO);
+		glBindVertexArray(game->renderer->VAO);
 		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
 
 		glBindVertexArray(0);

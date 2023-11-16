@@ -151,6 +151,7 @@
     <ClInclude Include="engine\framework\input\KeyboardInput.h" />
     <ClInclude Include="engine\framework\input\MouseInput.h" />
     <ClInclude Include="PrivateData.h" />
+    <ClInclude Include="engine\core\rendering\Renderer_OpenGL.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="engine\framework\scripts\Math.cpp" />
     <ClCompile Include="engine\framework\input\MouseInput.cpp" />
+    <ClCompile Include="engine\core\rendering\Renderer_OpenGL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
