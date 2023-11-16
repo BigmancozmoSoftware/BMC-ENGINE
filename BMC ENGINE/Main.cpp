@@ -51,39 +51,11 @@ int main(){
 		   0.35, 0.0f, 0.0f,
 		   0.2, -0.75, 0.0f
 	};
-	game->renderer->assignVars(vertices, sizeof(vertices));
-	game->renderer->createShaders();
 
-	size_t arraySize = sizeof(vertices) / sizeof(vertices[0]);
-	int vertAmount = (int)(arraySize / 3);
-	cout << "\namount of verts is " << vertAmount << endl;
-
-	// VBO/VAO
-	glGenVertexArrays(1, &game->renderer->VAO);
-	glGenBuffers(1, &game->renderer->VBO);
-
-	glBindVertexArray(game->renderer->VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, game->renderer->VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
-	glEnableVertexAttribArray(0);
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
+	game->renderer->setup(vertices, sizeof(vertices));
 
 	while (!glfwWindowShouldClose(game->window->getWindow())) {
-
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		glUseProgram(game->renderer->shaderProgram);
-
-		glBindVertexArray(game->renderer->VAO);
-		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
-
-		glBindVertexArray(0);
-
+		game->renderer->render();
 		game->window->update();
 	}
 	

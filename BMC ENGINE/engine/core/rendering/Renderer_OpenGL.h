@@ -9,12 +9,15 @@ class Renderer_OpenGL
 {
 public:
 	Renderer_OpenGL();
-	void assignVars(float vertices[], float vertSize);
+	void assignVars(float vs[], float vss);
 	void render();
 	void createShaders();
+	void makeVAOandVBO();
+	void setup(float vs[], float vss);
 public:
 	FileManager* fmanager;
-
+	float* vertices;
+	float vertSize;
 	string vertexShaderStr;
 	string fragmentShaderStr;
 	const char* vertexShaderSource;
