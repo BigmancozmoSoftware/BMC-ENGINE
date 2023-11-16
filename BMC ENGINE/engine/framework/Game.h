@@ -12,6 +12,7 @@ public:
 	FileManager* files;
 	KeyboardInput* keyboard;
 	MouseInput* mouse;
+	Renderer_OpenGL* renderer;
 	~Game();
 };
 
