@@ -51,25 +51,8 @@ int main(){
 		   0.35, 0.0f, 0.0f,
 		   0.2, -0.75, 0.0f
 	};
-	game->renderer->setup(vertices, sizeof(vertices));
-
-	// VS/FS
-	game->renderer->vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(game->renderer->vertexShader, 1, &game->renderer->vertexShaderSource, NULL);
-	glCompileShader(game->renderer->vertexShader);
-	game->renderer->fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(game->renderer->fragmentShader, 1, &game->renderer->fragmentShaderSource, NULL);
-	glCompileShader(game->renderer->fragmentShader);
-
-	// Shader program
-	game->renderer->shaderProgram = glCreateProgram();
-	glAttachShader(game->renderer->shaderProgram, game->renderer->vertexShader);
-	glAttachShader(game->renderer->shaderProgram, game->renderer->fragmentShader);
-	glLinkProgram(game->renderer->shaderProgram);
-
-	// Delete shaders, they're in the program
-	glDeleteShader(game->renderer->vertexShader);
-	glDeleteShader(game->renderer->fragmentShader);
+	game->renderer->assignVars(vertices, sizeof(vertices));
+	game->renderer->createShaders();
 
 	size_t arraySize = sizeof(vertices) / sizeof(vertices[0]);
 	int vertAmount = (int)(arraySize / 3);

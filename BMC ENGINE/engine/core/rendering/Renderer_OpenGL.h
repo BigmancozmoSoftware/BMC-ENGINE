@@ -9,8 +9,9 @@ class Renderer_OpenGL
 {
 public:
 	Renderer_OpenGL();
-	void setup(float vertices[], float vertSize);
+	void assignVars(float vertices[], float vertSize);
 	void render();
+	void createShaders();
 public:
 	FileManager* fmanager;
 
