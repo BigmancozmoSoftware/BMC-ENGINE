@@ -178,10 +178,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="engine\assets\shaders\default\fragmentShader.frag">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="engine\assets\shaders\default\vertexShader.vert">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png" />
-    <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png" />
+    <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="engine\assets\images\logo\bmcenginelogo_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="engine\assets\sound\bass.mp3" />

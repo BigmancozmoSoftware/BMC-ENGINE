@@ -131,12 +131,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="engine\assets\shaders\default\fragmentShader.frag" />
+    <None Include="engine\assets\shaders\default\vertexShader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="engine\assets\images\logo\bmcenginelogo_small.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
