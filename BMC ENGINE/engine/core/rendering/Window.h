@@ -3,6 +3,8 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+using namespace std;
+
 class Window
 {
 public:
@@ -15,5 +17,6 @@ public:
 	int height;
 private:
 	GLFWwindow* window;
+	//float WtoHmultiplier;
 };
 

@@ -5,10 +5,16 @@
 #include "../../../GameSettings.h"
 #include <glad/glad.h>
 
+float WtoHmultiplier, HtoWmultiplier;
+float globalW, globalH;
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-        glViewport(0, 0, width, height);
+	float w = height * HtoWmultiplier;
+	float w_diff = globalW - w;
+    glViewport(w_diff / 2, 0, w, height);
+
 #if SETTINGS_ANTIALIASING
-		glEnable(GL_MULTISAMPLE);
+	glEnable(GL_MULTISAMPLE);
 #endif
 }
 
@@ -36,6 +42,11 @@ Window::Window(int w, int h, const char* title)
 	if (height == 0) {
 		height = vidMode->height * 0.8;
 	}
+
+	WtoHmultiplier = ((float)height) / ((float)width);
+	HtoWmultiplier = ((float)width) / ((float)height);
+	globalW = width;
+	globalH = height;
 	
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
