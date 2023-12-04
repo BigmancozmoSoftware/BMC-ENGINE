@@ -131,21 +131,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
-    <None Include="engine\assets\shaders\default\fragmentShader.frag" />
-    <None Include="engine\assets\shaders\default\vertexShader.vert" />
+    <None Include="resources\shaders\default\fragmentShader.frag" />
+    <None Include="resources\shaders\default\vertexShader.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="engine\assets\images\logo\bmcenginelogo_32x.png">
+    <Image Include="resources\images\logo\bmcenginelogo_32x.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="engine\assets\images\logo\bmcenginelogo_64x.png">
+    <Image Include="resources\images\logo\bmcenginelogo_64x.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="engine\assets\images\logo\bmcenginelogo_small.png">
+    <Image Include="resources\images\logo\bmcenginelogo_small.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="engine\assets\sound\bass.mp3" />
+    <Media Include="resources\sound\bass.mp3" />
   </ItemGroup>
 </Project>
