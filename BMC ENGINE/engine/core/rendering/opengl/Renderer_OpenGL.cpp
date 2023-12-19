@@ -32,15 +32,19 @@ void Renderer_OpenGL::render()
 #endif
 
 	// other opengl stuff
-	glUseProgram(shaderProgram);
-	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, vertAmount);
-	glBindVertexArray(0);
+	if (rendererEnabled) {
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
+		glBindVertexArray(0);
+	}
 
 	// more rendering stuff?? im confused can someone on the github explain
 #if USE_BETA_MENU
 	Begin("Beta Options");
 	Text("Hello! Welcome to the BMC Engine Beta!\nThis menu allows you to pick from some beta test options.");
+	Checkbox("Renderer Enabled", &rendererEnabled);
+
 	End();
 	Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

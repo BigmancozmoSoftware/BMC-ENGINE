@@ -21,6 +21,7 @@ public:
 	void makeVAOandVBO();
 	void setup(float vs[], float vss);
 	void cleanup();
+
 public:
 	FileManager* fmanager;
 	float* vertices;
@@ -36,5 +37,8 @@ public:
 	int vertAmount;
 	int success;
 	char infoLog[512];
+
+private: // imgui settings
+	bool rendererEnabled = true;
 };
 
