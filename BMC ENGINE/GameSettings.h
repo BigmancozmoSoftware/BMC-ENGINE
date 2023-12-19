@@ -9,3 +9,6 @@
 // Game Default Settings //
 #define SETTINGS_ANTIALIASING true
 #define SETTINGS_ANTIALIASING_LEVEL 8
+
+// Beta Settings //
+#define USE_IMGUI_BETA true

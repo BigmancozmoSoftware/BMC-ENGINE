@@ -158,6 +158,13 @@
     <ClInclude Include="engine\core\rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\core\imgui\imgui.cpp" />
+    <ClCompile Include="engine\core\imgui\imgui_demo.cpp" />
+    <ClCompile Include="engine\core\imgui\imgui_draw.cpp" />
+    <ClCompile Include="engine\core\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="engine\core\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="engine\core\imgui\imgui_tables.cpp" />
+    <ClCompile Include="engine\core\imgui\imgui_widgets.cpp" />
     <ClCompile Include="engine\framework\util\ConsoleUtils.cpp" />
     <ClCompile Include="engine\framework\util\ArrayLength.cpp" />
     <ClCompile Include="engine\core\audio\Audio.cpp" />

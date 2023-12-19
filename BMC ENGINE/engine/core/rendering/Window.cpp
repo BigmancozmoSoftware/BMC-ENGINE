@@ -15,6 +15,8 @@ float WtoHmultiplier, HtoWmultiplier;
 float globalW, globalH;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+	WtoHmultiplier = ((float)height) / ((float)globalW);
+
 	float w = height * HtoWmultiplier;
 	float w_diff = globalW - width;
 	cout << globalW << endl << w << endl;
@@ -84,6 +86,17 @@ Window::Window(int w, int h, const char* title)
 	long dwStyle = GetWindowLong(hwnd, GWL_STYLE);
 	dwStyle ^= WS_MAXIMIZEBOX;
 	SetWindowLong(hwnd, GWL_STYLE, dwStyle);
+
+#if USE_IMGUI_BETA
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+	ImGui::StyleColorsDark();
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	ImGui_ImplOpenGL3_Init("#version 130");
+#endif
 }
 
 void Window::update()
