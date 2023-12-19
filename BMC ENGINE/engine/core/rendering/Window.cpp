@@ -1,17 +1,25 @@
 #include "Window.h"
 
 #define STB_IMAGE_IMPLEMENTATION
+#define GLFW_EXPOSE_NATIVE_WIN32
+#define GLFW_EXPOSE_NATIVE_WGL
+#define GLFW_NATIVE_INCLUDE_NONE
+
 #include "stb/stb_image.h"
 #include "../../../GameSettings.h"
 #include <glad/glad.h>
+#include <Windows.h>
+#include "GLFW/glfw3native.h"
 
 float WtoHmultiplier, HtoWmultiplier;
 float globalW, globalH;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	float w = height * HtoWmultiplier;
-	float w_diff = globalW - w;
-    glViewport(w_diff / 2, 0, w, height);
+	float w_diff = globalW - width;
+	cout << globalW << endl << w << endl;
+	cout << "diff is " << w_diff << endl;
+	glViewport(-(w_diff / 2), 0, w, height);
 
 #if SETTINGS_ANTIALIASING
 	glEnable(GL_MULTISAMPLE);
@@ -32,6 +40,7 @@ Window::Window(int w, int h, const char* title)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
 #if SETTINGS_ANTIALIASING
 	glfwWindowHint(GLFW_SAMPLES, SETTINGS_ANTIALIASING_LEVEL);
 #endif
@@ -70,6 +79,11 @@ Window::Window(int w, int h, const char* title)
 	glfwMakeContextCurrent(window);
 
 	glfwSetWindowIcon(window, 1, images);
+
+	HWND hwnd = glfwGetWin32Window(window);
+	long dwStyle = GetWindowLong(hwnd, GWL_STYLE);
+	dwStyle ^= WS_MAXIMIZEBOX;
+	SetWindowLong(hwnd, GWL_STYLE, dwStyle);
 }
 
 void Window::update()
