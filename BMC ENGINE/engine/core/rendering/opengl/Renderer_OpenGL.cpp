@@ -31,6 +31,7 @@ void Renderer_OpenGL::render()
 
 	if (rendererEnabled) {
 		glUseProgram(shaderProgram);
+		glUniform1f(glGetUniformLocation(shaderProgram, "zoom"), zoom);
 		glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
@@ -40,9 +41,16 @@ void Renderer_OpenGL::render()
 #if USE_BETA_MENU
 	Begin("Beta Options");
 	Text("Hello! Welcome to the BMC Engine Beta!\nThis menu allows you to pick from some beta test options.");
+
+	Text("\nToggles:");
 	Checkbox("Renderer Enabled", &rendererEnabled);
+
+	Text("\nColors:");
 	ColorEdit4("Pentagon Color", pentagonColor);
 	ColorEdit4("Background Color", bgColor);
+
+	Text("\nSliders:");
+	SliderFloat("Zoom", &zoom, 0.0f, 5.0f);
 
 	End();
 	Render();
