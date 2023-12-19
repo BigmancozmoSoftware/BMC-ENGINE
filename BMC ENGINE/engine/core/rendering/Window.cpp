@@ -15,13 +15,13 @@ float WtoHmultiplier, HtoWmultiplier;
 float globalW, globalH;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	WtoHmultiplier = ((float)height) / ((float)globalW);
-
-	float w = height * HtoWmultiplier;
-	float w_diff = globalW - width;
-	cout << globalW << endl << w << endl;
-	cout << "diff is " << w_diff << endl;
-	glViewport(-(w_diff / 2), 0, w, height);
+	int newWidth = width;
+	int newHeight = static_cast<int>(width * 9.0 / 16.0);
+	if (newHeight > height) {
+		newHeight = height;
+		newWidth = static_cast<int>(height * 16.0 / 9.0);
+	}
+	glViewport((width - newWidth) / 2, (height - newHeight) / 2, newWidth, newHeight);
 
 #if SETTINGS_ANTIALIASING
 	glEnable(GL_MULTISAMPLE);

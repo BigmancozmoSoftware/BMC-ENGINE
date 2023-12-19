@@ -32,6 +32,7 @@ void Renderer_OpenGL::render()
 	if (rendererEnabled) {
 		glUseProgram(shaderProgram);
 		glUniform1f(glGetUniformLocation(shaderProgram, "zoom"), zoom);
+		glUniform1f(glGetUniformLocation(shaderProgram, "widthMultiplier"), widthMultiplier);
 		glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
