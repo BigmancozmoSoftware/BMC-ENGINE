@@ -9,12 +9,11 @@ mkdir resources
 cd ../..
 
 cd "BMC ENGINE"
-cd engine
 
 echo Copying to Debug
-robocopy "assets" "../../x64/Debug/resources" /s /e
+robocopy "resources" "../x64/Debug/resources" /s /e
 
 echo Copying to Release
-robocopy "assets" "../../x64/Release/resources" /s /e
+robocopy "resources" "../x64/Release/resources" /s /e
 
 cd ../..

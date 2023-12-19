@@ -1,7 +1,14 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
+#include "imgui/imgui.h"
+#include "imgui/backends/imgui_impl_glfw.h"
+#include "imgui/backends/imgui_impl_opengl3.h"
 #include <iostream>
+#include <stdio.h>
+#include <GLFW/glfw3.h>
+#define GL_SILENCE_DEPRECATION
+
+using namespace std;
 
 class Window
 {
@@ -15,5 +22,6 @@ public:
 	int height;
 private:
 	GLFWwindow* window;
+	//float WtoHmultiplier;
 };
 

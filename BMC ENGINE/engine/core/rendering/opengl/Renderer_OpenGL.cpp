@@ -20,12 +20,35 @@ void Renderer_OpenGL::assignVars(float verts[], float vs)
 
 void Renderer_OpenGL::render()
 {
+	// clear
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glUseProgram(shaderProgram);
-	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, vertAmount);
-	glBindVertexArray(0);
+
+	// the actual rendering
+#if USE_BETA_MENU
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	NewFrame();
+#endif
+
+	// other opengl stuff
+	if (rendererEnabled) {
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
+		glBindVertexArray(0);
+	}
+
+	// more rendering stuff?? im confused can someone on the github explain
+#if USE_BETA_MENU
+	Begin("Beta Options");
+	Text("Hello! Welcome to the BMC Engine Beta!\nThis menu allows you to pick from some beta test options.");
+	Checkbox("Renderer Enabled", &rendererEnabled);
+
+	End();
+	Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+#endif
 }
 
 void Renderer_OpenGL::createShaders()
@@ -65,4 +88,11 @@ void Renderer_OpenGL::setup(float vs[], float vss)
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
+}
+
+void Renderer_OpenGL::cleanup()
+{
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	DestroyContext();
 }
