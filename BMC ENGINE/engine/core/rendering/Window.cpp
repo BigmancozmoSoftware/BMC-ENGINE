@@ -87,7 +87,7 @@ Window::Window(int w, int h, const char* title)
 	dwStyle ^= WS_MAXIMIZEBOX;
 	SetWindowLong(hwnd, GWL_STYLE, dwStyle);
 
-#if USE_IMGUI_BETA
+#if USE_BETA_MENU
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
@@ -95,7 +95,7 @@ Window::Window(int w, int h, const char* title)
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
-	ImGui_ImplOpenGL3_Init("#version 130");
+	ImGui_ImplOpenGL3_Init("#version 330");
 #endif
 }
 
