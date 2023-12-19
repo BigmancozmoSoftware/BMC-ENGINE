@@ -14,4 +14,5 @@ Game::Game()
 Game::~Game()
 {
 	glfwTerminate();
+	renderer->cleanup();
 }
