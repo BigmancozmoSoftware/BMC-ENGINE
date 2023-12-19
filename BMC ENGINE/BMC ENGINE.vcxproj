@@ -151,20 +151,20 @@
     <ClInclude Include="engine\framework\input\KeyboardInput.h" />
     <ClInclude Include="engine\framework\input\MouseInput.h" />
     <ClInclude Include="PrivateData.h" />
-    <ClInclude Include="engine\core\rendering\Renderer_OpenGL.h" />
+    <ClInclude Include="engine\core\rendering\opengl\Renderer_OpenGL.h" />
     <ClInclude Include="scenes.h" />
     <ClInclude Include="engine\framework\GameObject\objects\ShapeObject.h" />
     <ClInclude Include="engine\framework\GameObject\Shapes.h" />
     <ClInclude Include="engine\core\rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine\core\imgui\imgui.cpp" />
-    <ClCompile Include="engine\core\imgui\imgui_demo.cpp" />
-    <ClCompile Include="engine\core\imgui\imgui_draw.cpp" />
-    <ClCompile Include="engine\core\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="engine\core\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="engine\core\imgui\imgui_tables.cpp" />
-    <ClCompile Include="engine\core\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui_demo.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui_draw.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui_tables.cpp" />
+    <ClCompile Include="engine\core\rendering\imgui\imgui_widgets.cpp" />
     <ClCompile Include="engine\framework\util\ConsoleUtils.cpp" />
     <ClCompile Include="engine\framework\util\ArrayLength.cpp" />
     <ClCompile Include="engine\core\audio\Audio.cpp" />
@@ -175,13 +175,13 @@
     <ClCompile Include="engine\framework\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="engine\framework\GameObject\objects\ShapeObject.cpp" />
     <ClCompile Include="engine\core\rendering\Window.cpp" />
-    <ClCompile Include="engine\core\rendering\glad.c" />
+    <ClCompile Include="engine\core\rendering\opengl\glad.c" />
     <ClCompile Include="engine\framework\input\KeyboardInput.cpp" />
     <ClCompile Include="engine\framework\scripts\Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="engine\framework\scripts\Math.cpp" />
     <ClCompile Include="engine\framework\input\MouseInput.cpp" />
-    <ClCompile Include="engine\core\rendering\Renderer_OpenGL.cpp" />
+    <ClCompile Include="engine\core\rendering\opengl\Renderer_OpenGL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

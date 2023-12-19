@@ -72,7 +72,7 @@
     <ClInclude Include="engine\framework\util\ConsoleUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\core\rendering\Renderer_OpenGL.h">
+    <ClInclude Include="engine\core\rendering\opengl\Renderer_OpenGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -113,7 +113,7 @@
     <ClCompile Include="engine\core\rendering\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\rendering\glad.c">
+    <ClCompile Include="engine\core\rendering\opengl\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\framework\scripts\Game.cpp">
@@ -125,28 +125,28 @@
     <ClCompile Include="engine\framework\util\ConsoleUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\rendering\Renderer_OpenGL.cpp">
+    <ClCompile Include="engine\core\rendering\opengl\Renderer_OpenGL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui_widgets.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui_demo.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui_draw.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui_impl_glfw.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui_impl_opengl3.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui_impl_opengl3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\core\imgui\imgui_tables.cpp">
+    <ClCompile Include="engine\core\rendering\imgui\imgui_tables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
