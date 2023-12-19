@@ -47,11 +47,8 @@ void Renderer_OpenGL::render()
 	Checkbox("Renderer Enabled", &rendererEnabled);
 	ColorEdit4("Pentagon Color", pentagonColor);
 	ColorEdit4("Background Color", bgColor);
+
 	End();
-
-	glUseProgram(shaderProgram);
-	glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
-
 	Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 #endif
