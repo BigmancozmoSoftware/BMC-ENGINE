@@ -40,5 +40,6 @@ public:
 
 private: // imgui settings
 	bool rendererEnabled = true;
+	float pentagonColor[4] = { 1.0f, 0.5f, 0.2f, 1.0f };
 };
 

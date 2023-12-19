@@ -34,6 +34,7 @@ void Renderer_OpenGL::render()
 	// other opengl stuff
 	if (rendererEnabled) {
 		glUseProgram(shaderProgram);
+		glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
 		glBindVertexArray(0);
@@ -44,8 +45,12 @@ void Renderer_OpenGL::render()
 	Begin("Beta Options");
 	Text("Hello! Welcome to the BMC Engine Beta!\nThis menu allows you to pick from some beta test options.");
 	Checkbox("Renderer Enabled", &rendererEnabled);
-
+	ColorEdit4("Pentagon Color", pentagonColor);
 	End();
+
+	glUseProgram(shaderProgram);
+	glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
+
 	Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 #endif
