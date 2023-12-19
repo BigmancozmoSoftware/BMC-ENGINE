@@ -20,18 +20,15 @@ void Renderer_OpenGL::assignVars(float verts[], float vs)
 
 void Renderer_OpenGL::render()
 {
-	// clear
 	glClearColor(bgColor[0], bgColor[1], bgColor[2], bgColor[3]);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	// the actual rendering
 #if USE_BETA_MENU
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();
 	NewFrame();
 #endif
 
-	// other opengl stuff
 	if (rendererEnabled) {
 		glUseProgram(shaderProgram);
 		glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
@@ -40,18 +37,14 @@ void Renderer_OpenGL::render()
 		glBindVertexArray(0);
 	}
 
-	// more rendering stuff?? im confused can someone on the github explain
 #if USE_BETA_MENU
 	Begin("Beta Options");
 	Text("Hello! Welcome to the BMC Engine Beta!\nThis menu allows you to pick from some beta test options.");
 	Checkbox("Renderer Enabled", &rendererEnabled);
 	ColorEdit4("Pentagon Color", pentagonColor);
 	ColorEdit4("Background Color", bgColor);
+
 	End();
-
-	glUseProgram(shaderProgram);
-	glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
-
 	Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 #endif
