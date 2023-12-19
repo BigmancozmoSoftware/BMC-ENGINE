@@ -11,4 +11,4 @@
 #define SETTINGS_ANTIALIASING_LEVEL 8
 
 // Beta Settings //
-#define USE_IMGUI_BETA true
+#define USE_BETA_MENU true
