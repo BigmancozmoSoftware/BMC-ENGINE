@@ -21,7 +21,7 @@ void Renderer_OpenGL::assignVars(float verts[], float vs)
 void Renderer_OpenGL::render()
 {
 	// clear
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glClearColor(bgColor[0], bgColor[1], bgColor[2], bgColor[3]);
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	// the actual rendering
@@ -46,6 +46,7 @@ void Renderer_OpenGL::render()
 	Text("Hello! Welcome to the BMC Engine Beta!\nThis menu allows you to pick from some beta test options.");
 	Checkbox("Renderer Enabled", &rendererEnabled);
 	ColorEdit4("Pentagon Color", pentagonColor);
+	ColorEdit4("Background Color", bgColor);
 	End();
 
 	glUseProgram(shaderProgram);
