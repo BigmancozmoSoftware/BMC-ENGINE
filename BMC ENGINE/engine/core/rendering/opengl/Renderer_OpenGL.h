@@ -40,5 +40,8 @@ public:
 
 private: // imgui settings
 	bool rendererEnabled = true;
+	float pentagonColor[4] = { 0.9058823529411765f, 0.9058823529411765f, 0.9058823529411765f, 1.0f };
+	float bgColor[4] = { 0.1294117647058824f, 0.1294117647058824f, 0.1294117647058824f, 1.0f };
+	float zoom = 1.0f;
 };
 
