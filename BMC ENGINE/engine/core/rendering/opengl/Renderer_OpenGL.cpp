@@ -13,6 +13,8 @@ void Renderer_OpenGL::calculateWidthMultiplier()
 		newHeight = height;
 		newWidth = static_cast<int>(height * 16.0 / 9.0);
 	}
+
+	//cout << "diff is " << ((height - newHeight) / 2) / (((width - newWidth) / 2) + 1) << endl;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -60,7 +62,6 @@ void Renderer_OpenGL::render()
 	NewFrame();
 #endif
 
-	cout << useImprovedRendering << endl;
 	if (useImprovedRendering) {
 		calculateWidthMultiplier();
 	}
@@ -82,7 +83,7 @@ void Renderer_OpenGL::render()
 
 	Text("\nToggles:");
 	Checkbox("Renderer Enabled", &rendererEnabled);
-	Checkbox("Improved Scaling Support", &useImprovedRendering);
+	Checkbox("Improved Scaling Support (broken)", &useImprovedRendering);
 
 	Text("\nColors:");
 	ColorEdit4("Pentagon Color", pentagonColor);
