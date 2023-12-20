@@ -14,19 +14,7 @@
 float WtoHmultiplier, HtoWmultiplier;
 float globalW, globalH;
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	int newWidth = width;
-	int newHeight = static_cast<int>(width * 9.0 / 16.0);
-	if (newHeight > height) {
-		newHeight = height;
-		newWidth = static_cast<int>(height * 16.0 / 9.0);
-	}
-	glViewport((width - newWidth) / 2, (height - newHeight) / 2, newWidth, newHeight);
 
-#if SETTINGS_ANTIALIASING
-	glEnable(GL_MULTISAMPLE);
-#endif
-}
 
 Window::Window(int w, int h, const char* title)
 {
@@ -60,7 +48,7 @@ Window::Window(int w, int h, const char* title)
 	globalH = height;
 	
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	//glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	int img_width, img_height;
 	int channels;
