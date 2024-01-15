@@ -22,7 +22,7 @@ void DownloadResources::download()
 	cout << endl;
 }
 
-void DownloadResources::splitString(string str)
+void DownloadResources::splitString(string str, string splitter)
 {
 	vector<string> strings;
 	istringstream f(str);
