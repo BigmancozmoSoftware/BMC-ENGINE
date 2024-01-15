@@ -1,12 +1,12 @@
 #pragma once
 
+#include "../BMC ENGINE/GameSettings.h"
 #include "imgui/imgui.h"
 #include "imgui/backends/imgui_impl_glfw.h"
 #include "imgui/backends/imgui_impl_opengl3.h"
 #include "../../file/FileManagement.h"
 #include <iostream>
 #include "glad/glad.h"
-#include "../../GameSettings.h"
 #include "../Window.h"
 
 using namespace ImGui;
