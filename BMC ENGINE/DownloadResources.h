@@ -13,5 +13,5 @@ class DownloadResources
 public:
 	static void download();
 private:
-	void splitString();
+	void splitString(string str);
 };
