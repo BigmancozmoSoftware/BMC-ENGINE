@@ -22,12 +22,12 @@ void DownloadResources::download()
 	cout << endl;
 }
 
-void DownloadResources::splitString(string str, string splitter)
+void DownloadResources::splitString(string str)
 {
 	vector<string> strings;
 	istringstream f(str);
 	string s;
-	while (getline(f, s, ';')) {
+	while (getline(f, s, '\\')) {
 		cout << s << endl;
 		strings.push_back(s);
 	}
