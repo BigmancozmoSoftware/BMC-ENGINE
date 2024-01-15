@@ -2,16 +2,19 @@
 
 void DownloadResources::download()
 {
-	wchar_t dir[1024];
+	wchar_t path[1024];
 
 	cout << "Checking if resources exist..." << endl;
 
-	GetModuleFileName(NULL, dir, 1024);
+	GetModuleFileName(NULL, path, 1024);
 
-	wstring ws(dir);
-	string dir_string(ws.begin(), ws.end());
+	wstring ws(path);
+	string path_string(ws.begin(), ws.end());
+	string dir_string = path_string;
+	vector<string> split = splitString(dir_string);
 
-	cout << "EXE dir is " << dir_string << endl;
+	cout << "EXE path is " << path_string << endl;
+	cout << "EXE directory is " << dir_string << endl << endl;
 	cout << "Downloading resources..." << endl;
 
 	const char* res_zip_url = "https://183a102d-add9-4b1e-8bff-30e434d3a98b-00-l26a1tv83v43.janeway.replit.dev/resources.zip";

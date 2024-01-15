@@ -13,5 +13,5 @@ class DownloadResources
 public:
 	static void download();
 private:
-	vector<string> splitString(string str);
+	static vector<string> splitString(string str);
 };
