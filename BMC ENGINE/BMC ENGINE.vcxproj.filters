@@ -75,6 +75,12 @@
     <ClInclude Include="engine\core\rendering\opengl\Renderer_OpenGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DownloadResources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\core\networking\curl\curlver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\framework\scripts\Scene.cpp">
@@ -147,6 +153,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\core\rendering\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DownloadResources.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

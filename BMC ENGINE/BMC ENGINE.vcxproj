@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)engine\core\networking\curl;$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)engine\core\networking\curl;$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
@@ -136,6 +136,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DownloadResources.h" />
+    <ClInclude Include="engine\core\networking\curl\curlver.h" />
     <ClInclude Include="engine\framework\util\ConsoleUtils.h" />
     <ClInclude Include="engine\framework\util\ArrayLength.h" />
     <ClInclude Include="engine\core\audio\Audio.h" />
@@ -158,6 +160,7 @@
     <ClInclude Include="engine\core\rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DownloadResources.cpp" />
     <ClCompile Include="engine\core\rendering\imgui\imgui.cpp" />
     <ClCompile Include="engine\core\rendering\imgui\imgui_demo.cpp" />
     <ClCompile Include="engine\core\rendering\imgui\imgui_draw.cpp" />
