@@ -3,6 +3,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <filesystem>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
