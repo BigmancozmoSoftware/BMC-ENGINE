@@ -2,9 +2,9 @@
 #include "curl/curl.h"
 #include <iostream>
 #include <Windows.h>
-#include <filesystem>
 #include <sstream>
 #include <vector>
+#include <stdio.h>
 
 using namespace std;
 
