@@ -12,6 +12,45 @@ void join(const vector<string>& v, char c, string& s) {
 	}
 }
 
+static void* _lzmaAlloc(ISzAllocPtr, size_t size) {
+	return new uint8_t[size];
+}
+static void _lzmaFree(ISzAllocPtr, void* addr) {
+	if (!addr)
+		return;
+
+	delete[] reinterpret_cast<uint8_t*>(addr);
+}
+
+static ISzAlloc _allocFuncs = {
+	_lzmaAlloc, _lzmaFree
+};
+
+std::unique_ptr<uint8_t[]> lzmaDecompress(const uint8_t* input, uint32_t inputSize, uint32_t* outputSize) {
+	if (inputSize < 13)
+		return NULL; // invalid header!
+
+	// extract the size from the header
+	UInt64 size = 0;
+	for (int i = 0; i < 8; i++)
+		size |= (input[5 + i] << (i * 8));
+
+	if (size <= (256 * 1024 * 1024)) {
+		auto blob = std::make_unique<uint8_t[]>(size);
+
+		ELzmaStatus lzmaStatus;
+		SizeT procOutSize = size, procInSize = inputSize - 13;
+		int status = LzmaDecode(blob.get(), &procOutSize, &input[13], &procInSize, input, 5, LZMA_FINISH_END, &lzmaStatus, &_allocFuncs);
+
+		if (status == SZ_OK && procOutSize == size) {
+			*outputSize = size;
+			return blob;
+		}
+	}
+
+	return NULL;
+}
+
 void DownloadResources::download()
 {
 	wchar_t path[1024];
@@ -37,6 +76,8 @@ void DownloadResources::download()
 	URLDownloadToFile(NULL, res_zip_url, d_str, 0, NULL);
 
 	cout << "Finished downloading!" << endl << "Extracting...";
+
+	
 
 	cout << endl;
 
