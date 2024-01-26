@@ -37,14 +37,7 @@ void DownloadResources::download()
 	URLDownloadToFile(NULL, res_zip_url, d_str, 0, NULL);
 
 	cout << "Finished downloading!" << endl << "Extracting...";
-
-	
-
 	cout << endl;
-
-	//fclose(fp);
-
-	//curl_easy_cleanup(curl);
 }
 
 vector<string> DownloadResources::splitString(string str)
