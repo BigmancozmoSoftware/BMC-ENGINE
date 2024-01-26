@@ -1,8 +1,41 @@
 #include "Renderer_OpenGL.h"
 
-Renderer_OpenGL::Renderer_OpenGL()
+void Renderer_OpenGL::calculateWidthMultiplier()
 {
+	int width;
+	int height;
+
+	glfwGetWindowSize(window, &width, &height);
+
+	int newWidth = width;
+	int newHeight = static_cast<int>(width * 9.0 / 16.0);
+	if (newHeight > height) {
+		newHeight = height;
+		newWidth = static_cast<int>(height * 16.0 / 9.0);
+	}
+
+	//cout << "diff is " << ((height - newHeight) / 2) / (((width - newWidth) / 2) + 1) << endl;
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+	int newWidth = width;
+	int newHeight = static_cast<int>(width / 2.0);
+	if (newHeight > height) {
+		newHeight = height;
+		newWidth = static_cast<int>(height * 2.0);
+	}
+	glViewport((width - newWidth) / 2, (height - newHeight) / 2, newWidth, newHeight);
+
+#if SETTINGS_ANTIALIASING
+	glEnable(GL_MULTISAMPLE);
+#endif
+}
+
+Renderer_OpenGL::Renderer_OpenGL(Window* win)
+{
+	window = win->getWindow();
 	fmanager = new FileManager();
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 }
 
 void Renderer_OpenGL::assignVars(float verts[], float vs)
@@ -29,9 +62,15 @@ void Renderer_OpenGL::render()
 	NewFrame();
 #endif
 
+	if (useImprovedRendering) {
+		calculateWidthMultiplier();
+	}
+
 	if (rendererEnabled) {
 		glUseProgram(shaderProgram);
 		glUniform1f(glGetUniformLocation(shaderProgram, "zoom"), zoom);
+		glUniform1f(glGetUniformLocation(shaderProgram, "widthMultiplier"), widthMultiplier);
+		glUniform1f(glGetUniformLocation(shaderProgram, "improvedRenderer"), useImprovedRendering);
 		glUniform4f(glGetUniformLocation(shaderProgram, "color"), pentagonColor[0], pentagonColor[1], pentagonColor[2], pentagonColor[3]);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, vertAmount);
@@ -44,6 +83,7 @@ void Renderer_OpenGL::render()
 
 	Text("\nToggles:");
 	Checkbox("Renderer Enabled", &rendererEnabled);
+	Checkbox("Improved Scaling Support (broken)", &useImprovedRendering);
 
 	Text("\nColors:");
 	ColorEdit4("Pentagon Color", pentagonColor);
