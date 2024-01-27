@@ -1,7 +1,7 @@
 #pragma once
+#include <Windows.h>
 #include "curl/curl.h"
 #include <iostream>
-#include <Windows.h>
 #include <sstream>
 #include <vector>
 #include <stdio.h>
