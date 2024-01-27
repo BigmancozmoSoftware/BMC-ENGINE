@@ -5,13 +5,12 @@
 #include <sstream>
 #include <vector>
 #include <stdio.h>
-
-using namespace std;
+#include "elzip/elzip.hpp"
 
 class DownloadResources
 {
 public:
 	static void download();
 private:
-	static vector<string> splitString(string str);
+	static std::vector<std::string> splitString(std::string str);
 };
