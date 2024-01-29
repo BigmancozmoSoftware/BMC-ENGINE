@@ -10,7 +10,6 @@
 #include "../Window.h"
 
 using namespace ImGui;
-using namespace std;
 
 class Renderer_OpenGL
 {
@@ -29,8 +28,8 @@ public:
 	FileManager* fmanager;
 	float* vertices;
 	float vertSize;
-	string vertexShaderStr;
-	string fragmentShaderStr;
+	std::string vertexShaderStr;
+	std::string fragmentShaderStr;
 	const char* vertexShaderSource;
 	const char* fragmentShaderSource;
 	unsigned int vertexShader;

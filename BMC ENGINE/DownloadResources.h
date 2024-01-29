@@ -1,17 +1,16 @@
 #pragma once
+#include <Windows.h>
 #include "curl/curl.h"
 #include <iostream>
-#include <Windows.h>
 #include <sstream>
 #include <vector>
 #include <stdio.h>
-
-using namespace std;
+#include "zip/zip.h"
 
 class DownloadResources
 {
 public:
 	static void download();
 private:
-	static vector<string> splitString(string str);
+	static std::vector<std::string> splitString(std::string str);
 };

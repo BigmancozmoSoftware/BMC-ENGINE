@@ -1,14 +1,14 @@
 #include "FileManagement.h"
 
-string FileManager::ReadFile(const char* path)
+std::string FileManager::ReadFile(const char* path)
 {
-	std::cout << ((string)"Reading file " + (string)path) << endl;
+	std::cout << ((std::string)"Reading file " + (std::string)path) << std::endl;
 
-	string currentLine;
-	string text = "";
-	ifstream readFile(path);
+	std::string currentLine;
+	std::string text = "";
+	std::ifstream readFile(path);
 
-	while (getline(readFile, currentLine)) {
+	while (std::getline(readFile, currentLine)) {
 		text = text + currentLine + "\n";
 	}
 

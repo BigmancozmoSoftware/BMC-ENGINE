@@ -8,8 +8,6 @@
 #include <GLFW/glfw3.h>
 #define GL_SILENCE_DEPRECATION
 
-using namespace std;
-
 class Window
 {
 public:

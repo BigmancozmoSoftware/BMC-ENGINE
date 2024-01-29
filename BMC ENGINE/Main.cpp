@@ -1,11 +1,9 @@
+#include <Windows.h>
 #include "engine/framework/Game.h"
 #include "FMOD/fmod.h"
-#include <Windows.h>
 #include "PrivateData.h"
 #include <vector>
 #include "DownloadResources.h"
-
-using namespace std;
 
 int main(){
 	// downloading resources must be the first thing done (program will break if not)

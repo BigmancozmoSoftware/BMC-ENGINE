@@ -8,9 +8,9 @@ Audio::Audio()
 
 void Audio::playSound(const char* filePath)
 {
-	cout << "Playing sound '";
-	cout << filePath;
-	cout << "' once." << endl;
+	std::cout << "Playing sound '";
+	std::cout << filePath;
+	std::cout << "' once." << std::endl;
 
 	FMOD_SOUND* sound;
 	result = FMOD_System_CreateSound(system, filePath, FMOD_DEFAULT, NULL, &sound);
@@ -23,9 +23,9 @@ void Audio::playSound(const char* filePath)
 
 void Audio::playSound(const char* filePath, bool looped)
 {
-	cout << "Playing sound '";
-	cout << filePath;
-	cout << "' and looping." << endl;
+	std::cout << "Playing sound '";
+	std::cout << filePath;
+	std::cout << "' and looping." << std::endl;
 
 	auto mode = FMOD_DEFAULT;
 	if (looped) {
@@ -44,8 +44,8 @@ void Audio::playSound(const char* filePath, bool looped)
 
 void Audio::setVolume(int volume)
 {
-	cout << "Set volume to ";
-	cout << volume << endl;
+	std::cout << "Set volume to ";
+	std::cout << volume << std::endl;
 	result = FMOD_SoundGroup_SetVolume(sGroup, ((float)volume)/100);
 	if (didErrorOccur()) { return; }
 }
@@ -64,12 +64,12 @@ void Audio::initFmod()
 	result = FMOD_System_CreateSoundGroup(system, "KewlSoundGroup", &sGroup);
 	if (didErrorOccur()) { return; }
 
-	cout << "Initialized FMOD" << endl;
+	std::cout << "Initialized FMOD" << std::endl;
 }
 
 bool Audio::didErrorOccur(){
     if(result != FMOD_OK){
-        cout << "An FMOD error occurred!" << endl;
+		std::cout << "An FMOD error occurred!" << std::endl;
 		return true;
     }
     return false;

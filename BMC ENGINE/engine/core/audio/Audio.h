@@ -2,7 +2,6 @@
 
 #include "FMOD/fmod.h"
 #include <iostream>
-using namespace std;
 
 class Audio
 {
