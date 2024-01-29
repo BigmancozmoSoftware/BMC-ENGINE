@@ -1,0 +1,7 @@
+jobs:
+  epic_stuff:
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+      - name: EditorConfig-Action
+        uses: zbeekman/EditorConfig-Action@v1.1.1
