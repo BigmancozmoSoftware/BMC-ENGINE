@@ -1,5 +1,13 @@
 #include "DownloadResources.h"
 
+int on_extract_entry(const char* filename, void* arg) {
+	static int i = 0;
+	int n = *(int*)arg;
+	printf("Extracted: %s (%d of %d)\n", filename, ++i, n);
+
+	return 0;
+}
+
 void join(const std::vector<std::string>& v, char c, std::string& s) {
 
 	s.clear();
@@ -36,7 +44,15 @@ void DownloadResources::download()
 	const wchar_t* d_str = w_dir_string.c_str();
 	URLDownloadToFile(NULL, res_zip_url, d_str, 0, NULL);
 
-	std::cout << "Finished downloading!" << std::endl << "Extracting...";
+	std::cout << "Finished downloading!" << std::endl << "Extracting..." << std::endl;
+
+	int arg = 2;
+	zip_extract("./resources.zip", "./resources", on_extract_entry, &arg);
+
+	std::cout << "Finished extracting!" << std::endl;
+
+	std::remove("./resources.zip");
+
 	std::cout << std::endl;
 }
 

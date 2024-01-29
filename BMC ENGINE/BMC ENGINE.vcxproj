@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DownloadResources.cpp" />
+    <ClCompile Include="engine\core\file\zip\zip.c" />
     <ClCompile Include="engine\core\rendering\imgui\imgui.cpp" />
     <ClCompile Include="engine\core\rendering\imgui\imgui_demo.cpp" />
     <ClCompile Include="engine\core\rendering\imgui\imgui_draw.cpp" />

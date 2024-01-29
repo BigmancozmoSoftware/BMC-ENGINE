@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 #include <stdio.h>
-#include "elzip/elzip.hpp"
+#include "zip/zip.h"
 
 class DownloadResources
 {
